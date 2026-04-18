@@ -4,703 +4,678 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Saif Ul Fayaz — Electrical Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 
 :root{
-  --bg:       #09100d;
-  --surface:  #101a15;
-  --card:     #141f18;
-  --elevated: #1b2b21;
-  --border:   rgba(180,150,60,0.15);
-  --border-s: rgba(255,255,255,0.06);
-  --gold:     #c9a84c;
-  --gold-lt:  #e8c96a;
-  --gold-dim: rgba(201,168,76,0.12);
-  --cream:    #f0e8d8;
-  --cream-70: rgba(240,232,216,0.70);
-  --cream-45: rgba(240,232,216,0.45);
-  --sage:     #607a6a;
-  --white:    #f8f8f6;
+  --bg:    #07100a;
+  --s1:    #0c1810;
+  --s2:    #101d13;
+  --card:  #141f17;
+  --lift:  #1b2d1f;
+  --hi:    #223828;
+  --gold:  #c8a84c;
+  --gold2: #e6c96e;
+  --goldt: rgba(200,168,76,.11);
+  --goldl: rgba(200,168,76,.22);
+  --cr:    #ede5d0;
+  --c80:   rgba(237,229,208,.80);
+  --c55:   rgba(237,229,208,.55);
+  --c30:   rgba(237,229,208,.30);
+  --sage:  #5c7a68;
+  --w:     #f5f5f3;
+  --bdr:   rgba(237,229,208,.06);
+  --sh:    0 2px 20px rgba(0,0,0,.4);
+  --sh2:   0 8px 40px rgba(0,0,0,.55);
+  --r:     9px;
 }
 
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);line-height:1.6;overflow-x:hidden}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#2a4033;border-radius:2px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cr);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--goldt);color:var(--gold2)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--hi)}
+
+/* SVG ICON HELPER */
+.ico{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ico svg{display:block}
 
 /* ═══ NAV ═══ */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:900;
-  height:60px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 clamp(1.25rem,4vw,3.5rem);
-  background:rgba(9,16,13,0.88);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
+  position:fixed;inset:0 0 auto;z-index:999;
+  height:58px;display:flex;align-items:center;
+  padding:0 clamp(1rem,4vw,3rem);gap:1.5rem;
+  background:rgba(7,16,10,.94);backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--goldl);
 }
-.nav-logo{
-  font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;
-  color:var(--gold);letter-spacing:0.03em;white-space:nowrap;
+.n-logo{
+  font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;
+  color:var(--gold);white-space:nowrap;flex-shrink:0;letter-spacing:.03em;
 }
-.nav-menu{display:flex;gap:clamp(1rem,2.5vw,2rem);list-style:none}
-.nav-menu a{
-  font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--sage);text-decoration:none;transition:color .2s;
+.n-links{display:flex;gap:clamp(.7rem,2vw,2rem);list-style:none;margin-left:auto;align-items:center}
+.n-links a{
+  font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sage);text-decoration:none;transition:color .2s;white-space:nowrap;
 }
-.nav-menu a:hover{color:var(--gold)}
-.nav-cta{
-  display:inline-flex;align-items:center;
-  padding:0.45rem 1.1rem;
-  font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
-  background:var(--gold);color:var(--bg);
-  border-radius:2px;text-decoration:none;
-  transition:background .2s;white-space:nowrap;
+.n-links a:hover{color:var(--gold)}
+.n-cta{
+  padding:.38rem 1.05rem;background:var(--gold);color:var(--bg);
+  font-size:.67rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  border-radius:3px;text-decoration:none;transition:background .2s;white-space:nowrap;flex-shrink:0;
 }
-.nav-cta:hover{background:var(--gold-lt)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);transition:all .3s}
-.mobile-menu{
-  display:none;position:fixed;top:60px;left:0;right:0;
-  background:rgba(9,16,13,0.97);backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);z-index:899;
-  padding:1.5rem clamp(1.25rem,4vw,3.5rem);
-  flex-direction:column;gap:1.2rem;
+.n-cta:hover{background:var(--gold2)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:3px;margin-left:auto;flex-shrink:0}
+.ham span{display:block;width:21px;height:1.5px;background:var(--cr);border-radius:1px;transition:.28s}
+.ham.o span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.ham.o span:nth-child(2){opacity:0}
+.ham.o span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob{
+  display:none;position:fixed;top:58px;inset-x:0;z-index:998;
+  background:rgba(7,16,10,.97);backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--goldl);
+  flex-direction:column;padding:1.2rem clamp(1rem,4vw,3rem) 1.5rem;gap:.1rem;
 }
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);text-decoration:none}
-.mobile-menu a:hover{color:var(--gold)}
+.mob.o{display:flex}
+.mob a{
+  font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--sage);text-decoration:none;
+  padding:.65rem 0;border-bottom:1px solid var(--bdr);transition:color .2s;
+}
+.mob a:last-child{border:none}
+.mob a:hover{color:var(--gold)}
 
 /* ═══ HERO ═══ */
 .hero{
   min-height:100vh;
-  padding:calc(60px + clamp(3rem,8vh,6rem)) clamp(1.25rem,4vw,3.5rem) clamp(3rem,6vh,5rem);
+  padding:calc(58px + clamp(3rem,7vh,5rem)) clamp(1rem,4vw,3rem) clamp(3rem,6vh,5rem);
   display:flex;align-items:center;
-  position:relative;overflow:hidden;
+  background:var(--s2);position:relative;overflow:hidden;
 }
-/* Geometric accent lines */
 .hero::before{
-  content:'';position:absolute;top:0;right:0;
-  width:45%;height:100%;
-  background:linear-gradient(135deg,transparent 0%,rgba(201,168,76,0.03) 50%,transparent 100%);
-  pointer-events:none;
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 55% at 85% 25%,rgba(200,168,76,.07),transparent 65%),
+    radial-gradient(ellipse 40% 50% at 5% 85%,rgba(22,45,28,.9),transparent 70%);
 }
-.hero-grid-line{
-  position:absolute;top:0;bottom:0;
-  width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.08) 30%,rgba(201,168,76,0.08) 70%,transparent);
-  pointer-events:none;
+.hero::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent 80%);
 }
-.hero-grid-line:nth-child(1){left:25%}
-.hero-grid-line:nth-child(2){left:50%}
-.hero-grid-line:nth-child(3){left:75%}
 
 .hero-inner{
   position:relative;z-index:2;
-  max-width:1200px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr 380px;
-  gap:clamp(2rem,5vw,5rem);align-items:center;
+  max-width:1120px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 340px;
+  gap:clamp(2.5rem,5vw,5rem);align-items:center;
 }
 
-/* LEFT */
-.hero-left{}
-.hero-chip{
-  display:inline-flex;align-items:center;gap:0.6rem;
-  font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.6rem;
+.h-eye{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.4rem;
 }
-.hero-chip-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,0.5)}50%{box-shadow:0 0 0 6px rgba(201,168,76,0)}}
+.h-eye::before{content:'';width:20px;height:1.5px;background:var(--gold);border-radius:1px}
+.h-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;vertical-align:middle;margin-left:.15rem;animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 
-.hero-name{
-  font-family:'Fraunces',serif;
-  font-size:clamp(3.2rem,7vw,6rem);
-  font-weight:900;line-height:1;
-  color:var(--white);
-  white-space:nowrap;
-  margin-bottom:1rem;
-  letter-spacing:-0.025em;
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,6vw,5.5rem);
+  font-weight:700;line-height:1;
+  color:var(--w);white-space:nowrap;letter-spacing:-.02em;margin-bottom:.8rem;
 }
-.hero-name .accent{color:var(--gold);font-style:italic;font-weight:300}
+h1 em{font-style:italic;font-weight:400;color:var(--gold)}
 
-.hero-role{
-  display:flex;align-items:center;gap:1rem;
-  font-size:clamp(0.8rem,1.5vw,0.95rem);font-weight:300;
-  color:var(--cream-70);margin-bottom:2rem;letter-spacing:0.02em;
+.h-sub{
+  display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;
+  font-size:clamp(.78rem,1.3vw,.9rem);font-weight:300;
+  color:var(--c80);margin-bottom:1.6rem;
 }
-.hero-role-divider{width:32px;height:1px;background:var(--border);flex-shrink:0}
+.h-sub b{color:var(--cr);font-weight:500}
+.h-sub .sep{color:var(--sage);font-weight:300}
 
-.hero-bio{
-  font-size:clamp(0.88rem,1.3vw,0.97rem);
-  line-height:1.85;color:var(--cream-45);
-  max-width:560px;margin-bottom:2.5rem;
+.h-bio{
+  font-size:clamp(.84rem,1.2vw,.93rem);line-height:1.9;
+  color:var(--c55);max-width:500px;margin-bottom:2.2rem;
 }
 
-.hero-actions{display:flex;gap:0.85rem;flex-wrap:wrap}
+.btn-row{display:flex;gap:.7rem;flex-wrap:wrap}
 .btn{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  padding:0.75rem 1.6rem;
-  font-family:'DM Sans',sans-serif;
-  font-size:0.73rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
-  border-radius:2px;text-decoration:none;cursor:pointer;transition:all .25s;border:none;
+  display:inline-flex;align-items:center;
+  padding:.66rem 1.45rem;
+  font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  border-radius:3px;text-decoration:none;transition:all .22s;
 }
-.btn-primary{background:var(--gold);color:var(--bg)}
-.btn-primary:hover{background:var(--gold-lt);transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--cream);border:1px solid var(--border-s)}
-.btn-outline:hover{border-color:rgba(201,168,76,0.4);color:var(--gold);transform:translateY(-1px)}
+.btn-p{background:var(--gold);color:var(--bg);border:1px solid var(--gold)}
+.btn-p:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 6px 22px rgba(200,168,76,.25)}
+.btn-o{background:transparent;color:var(--cr);border:1px solid rgba(237,229,208,.14)}
+.btn-o:hover{border-color:var(--goldl);color:var(--gold);transform:translateY(-2px)}
 
-/* RIGHT PANEL */
-.hero-right{display:flex;flex-direction:column;gap:1rem}
-
-.info-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:8px;padding:1.4rem 1.6rem;
-  position:relative;overflow:hidden;
-  transition:transform .3s,border-color .3s;
+.h-cards{display:flex;flex-direction:column;gap:.8rem}
+.hc{
+  background:var(--card);border:1px solid var(--goldl);border-radius:var(--r);
+  padding:1.25rem 1.4rem;position:relative;overflow:hidden;
+  transition:transform .26s,box-shadow .26s;
 }
-.info-card::before{
+.hc::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,var(--gold),rgba(201,168,76,0) 60%);
+  background:linear-gradient(90deg,var(--gold),transparent 55%);
 }
-.info-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,0.3)}
-.ic-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
-.ic-value{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--white);line-height:1.2}
-.ic-sub{font-size:0.75rem;color:var(--sage);margin-top:0.2rem}
+.hc:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.hc-lbl{font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.32rem}
+.hc-val{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--w);line-height:1.2}
+.hc-sub{font-size:.7rem;color:var(--sage);margin-top:.18rem}
 
-.stats-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.stat-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:8px;padding:1.2rem 1.4rem;
-  transition:transform .3s;
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.sc{
+  background:var(--card);border:1px solid var(--goldl);border-radius:var(--r);
+  padding:1rem .9rem;text-align:center;transition:transform .26s;
 }
-.stat-card:hover{transform:translateY(-2px)}
-.stat-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--gold);line-height:1}
-.stat-lbl{font-size:0.68rem;color:var(--sage);margin-top:0.3rem;letter-spacing:0.04em}
+.sc:hover{transform:translateY(-3px)}
+.sc-n{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--gold);line-height:1}
+.sc-l{font-size:.58rem;color:var(--sage);margin-top:.25rem;line-height:1.35}
 
-/* ═══ SECTION BASE ═══ */
-.section{padding:clamp(4rem,8vh,7rem) clamp(1.25rem,4vw,3.5rem)}
-.section-inner{max-width:1200px;margin:0 auto;width:100%}
-.section.alt{background:var(--surface)}
+/* ═══ SECTION ═══ */
+.sec{padding:clamp(3.5rem,7vh,6rem) clamp(1rem,4vw,3rem)}
+.sec.alt{background:var(--s1)}
+.sec.main{background:var(--s2)}
+.si{max-width:1120px;margin:0 auto;width:100%}
 
-.sec-eyebrow{
-  display:flex;align-items:center;gap:0.75rem;
-  font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:0.75rem;
+.ey{
+  display:flex;align-items:center;gap:.55rem;
+  font-size:.58rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.5rem;
 }
-.sec-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
-.sec-title{
-  font-family:'Fraunces',serif;
-  font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:var(--white);line-height:1.1;
-  margin-bottom:clamp(2.5rem,5vh,4rem);
+.ey::before{content:'';width:18px;height:1.5px;background:var(--gold);border-radius:1px}
+.sh{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:400;color:var(--w);line-height:1.1;
+  margin-bottom:clamp(1.8rem,4vh,3rem);
 }
-.sec-title em{font-style:italic;color:var(--gold);font-weight:300}
+.sh em{font-style:italic;color:var(--gold)}
 
 /* ═══ ABOUT ═══ */
-.about-layout{
-  display:grid;grid-template-columns:1fr 320px;
-  gap:clamp(2rem,5vw,5rem);align-items:start;
+.about-grid{
+  display:grid;grid-template-columns:1fr 270px;
+  gap:clamp(2rem,4vw,4rem);align-items:start;
 }
-.about-text p{
-  font-size:0.95rem;line-height:1.9;
-  color:var(--cream-70);margin-bottom:1.3rem;
-}
+.about-text p{font-size:.89rem;line-height:1.95;color:var(--c80);margin-bottom:1.1rem}
 .about-text p:last-child{margin-bottom:0}
 
-.contact-stack{display:flex;flex-direction:column;gap:0}
+.c-box{
+  background:var(--card);border:1px solid var(--goldl);
+  border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);
+}
+.c-box-head{
+  padding:.75rem 1.2rem;background:var(--lift);
+  border-bottom:1px solid var(--goldl);
+  font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+}
 .c-row{
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem 0;border-bottom:1px solid var(--border-s);
+  display:flex;align-items:center;gap:.85rem;
+  padding:.88rem 1.2rem;border-bottom:1px solid var(--bdr);
 }
-.c-row:first-child{border-top:1px solid var(--border-s)}
-.c-icon{
-  width:34px;height:34px;flex-shrink:0;
-  background:var(--gold-dim);border:1px solid var(--border);
-  border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;
+.c-row:last-child{border-bottom:none}
+.c-ico-wrap{
+  width:30px;height:30px;flex-shrink:0;border-radius:6px;
+  background:var(--goldt);border:1px solid var(--goldl);
+  display:flex;align-items:center;justify-content:center;
 }
-.c-lbl{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:0.1rem}
-.c-val{font-size:0.85rem;color:var(--cream)}
-.c-val a{color:var(--cream);text-decoration:none;transition:color .2s}
+.c-ico-wrap svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.c-lbl{font-size:.55rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:.06rem}
+.c-val{font-size:.78rem;color:var(--cr)}
+.c-val a{color:var(--cr);text-decoration:none;transition:color .2s}
 .c-val a:hover{color:var(--gold)}
 
 /* ═══ EDUCATION ═══ */
-.edu-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:auto auto;
-  gap:1.25rem;
+.edu-wrap{
+  border:1px solid var(--goldl);border-radius:var(--r);
+  overflow:hidden;background:var(--card);box-shadow:var(--sh);
 }
-.edu-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:8px;padding:1.8rem 2rem;
-  position:relative;overflow:hidden;
-  transition:transform .3s,border-color .3s;
-  display:flex;flex-direction:column;
+.edu-row{
+  display:grid;grid-template-columns:130px 1fr;
+  border-bottom:1px solid var(--bdr);transition:background .18s;
 }
-.edu-card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,0.35)}
-.edu-card::after{
-  content:'';position:absolute;
-  bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--gold),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.edu-card:hover::after{opacity:1}
-.edu-card.span-full{grid-column:1/-1}
+.edu-row:last-child{border-bottom:none}
+.edu-row:hover{background:var(--lift)}
+.edu-row.top{background:var(--lift)}
+.edu-row.top:hover{background:var(--hi)}
 
-.edu-period{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
-.edu-degree{
-  font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;
-  color:var(--white);line-height:1.25;margin-bottom:0.3rem;
+.edu-left{
+  padding:1.4rem 1.2rem;
+  border-right:1px solid var(--bdr);
 }
-.edu-school{font-size:0.8rem;color:var(--sage);margin-bottom:0.8rem}
-.edu-desc{font-size:0.82rem;line-height:1.75;color:var(--cream-45);flex:1}
-.edu-badge{
-  display:inline-block;margin-top:1rem;
-  background:var(--gold-dim);border:1px solid var(--border);
-  color:var(--gold-lt);font-size:0.65rem;
-  padding:0.22rem 0.75rem;border-radius:2px;letter-spacing:0.08em;
-  align-self:flex-start;
+.edu-yr{font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);line-height:1.6}
+.edu-chip{
+  display:inline-block;margin-top:.4rem;
+  background:var(--gold);color:var(--bg);
+  font-size:.53rem;font-weight:700;padding:.18rem .55rem;
+  border-radius:2px;letter-spacing:.07em;text-transform:uppercase;
 }
-/* featured card row */
-.edu-card.span-full .edu-inner{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+
+.edu-right{padding:1.4rem 1.6rem}
+.edu-deg{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;
+  color:var(--w);line-height:1.3;margin-bottom:.2rem;
+}
+.edu-sch{font-size:.73rem;color:var(--sage);margin-bottom:.5rem}
+.edu-desc{font-size:.76rem;line-height:1.75;color:var(--c30)}
 
 /* ═══ EXPERIENCE ═══ */
-.exp-wrapper{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:8px;overflow:hidden;
+.exp-card{
+  background:var(--card);border:1px solid var(--goldl);
+  border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);
 }
-.exp-layout{display:grid;grid-template-columns:240px 1fr}
-.exp-aside{
-  background:var(--elevated);
-  border-right:1px solid var(--border);
-  padding:2.2rem 1.8rem;
-  display:flex;flex-direction:column;justify-content:space-between;
-}
-.exp-logo{
-  width:52px;height:52px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold),#7a5510);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Fraunces',serif;font-size:1.1rem;font-weight:900;color:var(--bg);
-  margin-bottom:1.4rem;
-}
-.exp-aside-type{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem}
-.exp-aside-co{font-size:0.9rem;font-weight:600;color:var(--white);line-height:1.3}
-.exp-aside-org{font-size:0.75rem;color:var(--sage);margin-top:0.2rem}
-.exp-aside-dur{
-  font-size:0.7rem;color:var(--cream-45);
-  padding-top:1.2rem;margin-top:1.5rem;
-  border-top:1px solid var(--border-s);
-  line-height:1.6;
+.exp-head{
+  display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;
+  padding:1.6rem clamp(1.2rem,3vw,2rem);
+  background:var(--lift);border-bottom:1px solid var(--goldl);
 }
 
-.exp-main{padding:2.2rem 2.5rem}
-.exp-title{
-  font-family:'Fraunces',serif;font-size:1.9rem;font-weight:300;
-  color:var(--white);margin-bottom:1.2rem;line-height:1.2;
+/* NHPC logo — clean typographic on white */
+.nhpc-wrap{
+  flex-shrink:0;width:68px;height:68px;border-radius:var(--r);
+  background:#fff;padding:6px;
+  box-shadow:0 2px 14px rgba(0,0,0,.35);
+  display:flex;align-items:center;justify-content:center;
 }
-.exp-title em{font-style:italic;color:var(--gold)}
-.exp-body{font-size:0.92rem;line-height:1.9;color:var(--cream-70);margin-bottom:1.8rem}
-.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem}
+/* SVG-based NHPC logo */
+.nhpc-wrap svg{width:100%;height:100%;display:block}
+
+.exp-info{flex:1;min-width:0}
+.exp-type{font-size:.57rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.28rem}
+.exp-co{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--w);line-height:1.2;margin-bottom:.2rem}
+.exp-org{font-size:.75rem;color:var(--sage)}
+
+.exp-body{padding:1.8rem clamp(1.2rem,3vw,2rem)}
+.exp-body p{font-size:.88rem;line-height:1.95;color:var(--c80);margin-bottom:1.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
 .tag{
-  background:var(--gold-dim);border:1px solid var(--border);
-  color:var(--gold-lt);font-size:0.7rem;
-  padding:0.28rem 0.8rem;border-radius:2px;letter-spacing:0.06em;
+  background:var(--goldt);border:1px solid var(--goldl);
+  color:var(--gold2);font-size:.67rem;font-weight:500;
+  padding:.22rem .7rem;border-radius:2px;letter-spacing:.05em;
 }
 
 /* ═══ SKILLS ═══ */
-.skills-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1.25rem;
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.sk-card{
+  background:var(--card);border:1px solid var(--goldl);border-radius:var(--r);
+  padding:1.4rem 1.5rem;box-shadow:var(--sh);
+  transition:transform .26s,box-shadow .26s,border-color .26s;
 }
-.skill-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:8px;padding:1.8rem;
-  transition:transform .3s;
-}
-.skill-card:hover{transform:translateY(-3px)}
+.sk-card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:rgba(200,168,76,.38)}
 .sk-head{
-  display:flex;align-items:center;gap:0.75rem;
-  padding-bottom:1rem;margin-bottom:1.4rem;
-  border-bottom:1px solid var(--border-s);
+  display:flex;align-items:center;gap:.6rem;
+  padding-bottom:.85rem;margin-bottom:.9rem;
+  border-bottom:1px solid var(--bdr);
 }
-.sk-icon{
-  width:36px;height:36px;
-  background:var(--gold-dim);border:1px solid var(--border);
-  border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;
+.sk-ico-wrap{
+  width:30px;height:30px;border-radius:6px;
+  background:var(--goldt);border:1px solid var(--goldl);
+  display:flex;align-items:center;justify-content:center;
 }
-.sk-title{font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream)}
-.skill-list{display:flex;flex-direction:column;gap:0.8rem}
-.skill-item{}
-.skill-item-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem}
-.skill-item-name{font-size:0.8rem;color:var(--cream-70)}
-.skill-item-pct{font-size:0.65rem;color:var(--gold);font-weight:600}
-.bar-track{height:2px;background:rgba(255,255,255,0.06);border-radius:1px;overflow:hidden}
-.bar-fill{
-  height:100%;border-radius:1px;
-  background:linear-gradient(90deg,var(--gold),var(--gold-lt));
-  animation:grow 1.5s cubic-bezier(.4,0,.2,1) both;
+.sk-ico-wrap svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sk-ttl{font-size:.63rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--c80)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.sk-t{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  color:var(--c55);font-size:.72rem;padding:.25rem .65rem;border-radius:3px;
+  transition:all .18s;cursor:default;
 }
-@keyframes grow{from{width:0 !important}}
+.sk-t:hover{background:var(--goldt);border-color:var(--goldl);color:var(--gold2)}
 
 /* ═══ FOOTER ═══ */
 footer{
-  background:#060d09;border-top:1px solid var(--border);
-  padding:2rem clamp(1.25rem,4vw,3.5rem);
+  background:var(--bg);border-top:1px solid var(--goldl);
+  padding:1.6rem clamp(1rem,4vw,3rem);
 }
-.footer-inner{
-  max-width:1200px;margin:0 auto;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
-}
-.footer-brand{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)}
-.footer-info{font-size:0.75rem;color:var(--sage);text-align:center}
-.footer-links{font-size:0.75rem;color:var(--sage)}
+.ft{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.7rem}
+.ft-brand{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:700;color:var(--gold)}
+.ft-mid,.ft-r{font-size:.7rem;color:var(--sage)}
 
-/* ═══ FADE-IN ═══ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-chip   {animation:fadeUp .55s .00s both}
-.hero-name   {animation:fadeUp .55s .10s both}
-.hero-role   {animation:fadeUp .55s .18s both}
-.hero-bio    {animation:fadeUp .55s .26s both}
-.hero-actions{animation:fadeUp .55s .34s both}
-.hero-right  {animation:fadeUp .55s .15s both}
+/* ═══ ANIMS ═══ */
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.h-eye  {animation:up .48s .00s both}
+h1      {animation:up .48s .08s both}
+.h-sub  {animation:up .48s .15s both}
+.h-bio  {animation:up .48s .21s both}
+.btn-row{animation:up .48s .27s both}
+.h-cards{animation:up .48s .10s both}
 
-/* ═══════════════════════════
-   RESPONSIVE — TABLET
-   ═══════════════════════════ */
-@media(max-width:1024px){
-  .hero-inner{grid-template-columns:1fr;gap:3rem}
-  .hero-name{white-space:normal;font-size:clamp(2.8rem,9vw,5rem)}
-  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-  .stats-pair{grid-template-columns:1fr 1fr}
-
-  .about-layout{grid-template-columns:1fr;gap:2.5rem}
-
-  .edu-grid{grid-template-columns:1fr}
-  .edu-card.span-full{grid-column:auto}
-  .edu-card.span-full .edu-inner{grid-template-columns:1fr}
-
-  .exp-layout{grid-template-columns:1fr}
-  .exp-aside{border-right:none;border-bottom:1px solid var(--border);flex-direction:row;flex-wrap:wrap;gap:1.5rem;align-items:flex-start}
-  .exp-aside-dur{margin-top:0;padding-top:0;border-top:none}
-
-  .skills-grid{grid-template-columns:1fr 1fr}
+/* ═══ TABLET ≤ 980px ═══ */
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:2.2rem}
+  h1{white-space:normal;font-size:clamp(2.6rem,7vw,4.4rem)}
+  .h-cards{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+  .stat-row{grid-column:1/-1;grid-template-columns:repeat(3,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .sk-grid{grid-template-columns:1fr 1fr}
 }
 
-/* ═══════════════════════════
-   RESPONSIVE — MOBILE
-   ═══════════════════════════ */
-@media(max-width:640px){
-  .nav-menu,.nav-cta{display:none}
-  .hamburger{display:flex}
-
-  .hero{padding-top:calc(60px + 2rem);padding-bottom:2.5rem}
-  .hero-name{font-size:clamp(2.4rem,11vw,3.8rem);white-space:normal;letter-spacing:-0.02em}
-  .hero-role{flex-wrap:wrap;gap:0.5rem;font-size:0.82rem}
-  .hero-right{grid-template-columns:1fr;display:flex;flex-direction:column}
-  .stats-pair{grid-template-columns:1fr 1fr}
-
-  .about-layout{grid-template-columns:1fr}
-  .edu-grid{grid-template-columns:1fr}
-  .edu-card.span-full .edu-inner{grid-template-columns:1fr}
-  .exp-layout{grid-template-columns:1fr}
-  .exp-aside{flex-direction:column}
-  .exp-main{padding:1.5rem}
-  .skills-grid{grid-template-columns:1fr}
-
-  .footer-inner{flex-direction:column;text-align:center}
+/* ═══ MOBILE ≤ 580px ═══ */
+@media(max-width:580px){
+  .n-links,.n-cta{display:none}
+  .ham{display:flex}
+  h1{font-size:clamp(2rem,9.5vw,3rem);white-space:normal}
+  .h-sub{font-size:.76rem}
+  .h-bio{font-size:.83rem}
+  .h-cards{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:repeat(3,1fr)}
+  .edu-row{grid-template-columns:1fr}
+  .edu-left{border-right:none;border-bottom:1px solid var(--bdr);padding:.9rem 1.2rem}
+  .edu-right{padding:1rem 1.2rem}
+  .exp-head{padding:1.2rem;gap:1rem}
+  .exp-body{padding:1.2rem}
+  .nhpc-wrap{width:54px;height:54px}
+  .sk-grid{grid-template-columns:1fr}
+  .ft{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">Saif Ul Fayaz</div>
-  <ul class="nav-menu">
+  <div class="n-logo">Saif Ul Fayaz</div>
+  <ul class="n-links">
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
   </ul>
-  <a href="mailto:saif.ul.fayaz@outlook.com" class="nav-cta">Contact</a>
-  <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+  <a href="mailto:saif.ul.fayaz@outlook.com" class="n-cta">Contact</a>
+  <div class="ham" id="hm" onclick="this.classList.toggle('o');document.getElementById('mb').classList.toggle('o')">
     <span></span><span></span><span></span>
   </div>
 </nav>
-<div class="mobile-menu">
-  <a href="#about"      onclick="this.parentElement.classList.remove('open')">About</a>
-  <a href="#education"  onclick="this.parentElement.classList.remove('open')">Education</a>
-  <a href="#experience" onclick="this.parentElement.classList.remove('open')">Experience</a>
-  <a href="#skills"     onclick="this.parentElement.classList.remove('open')">Skills</a>
+<div class="mob" id="mb">
+  <a href="#about"      onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">About</a>
+  <a href="#education"  onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Education</a>
+  <a href="#experience" onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Experience</a>
+  <a href="#skills"     onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Skills</a>
   <a href="mailto:saif.ul.fayaz@outlook.com">saif.ul.fayaz@outlook.com</a>
 </div>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-grid-line"></div>
-  <div class="hero-grid-line"></div>
-  <div class="hero-grid-line"></div>
-
   <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-chip">
-        <span class="hero-chip-dot"></span>
-        Electrical Engineering · Kashmir
+    <div>
+      <div class="h-eye">B.Tech · Electrical Engineering <span class="h-dot"></span></div>
+      <h1>Saif Ul <em>Fayaz</em></h1>
+      <div class="h-sub">
+        <b>Final Year Student</b>
+        <span class="sep">·</span>
+        B.Tech Electrical Engineering
+        <span class="sep">·</span>
+        University of Kashmir
       </div>
-
-      <h1 class="hero-name">Saif Ul <span class="accent">Fayaz</span></h1>
-
-      <div class="hero-role">
-        <span>B.Tech Final Year</span>
-        <span class="hero-role-divider"></span>
-        <span>Power Systems</span>
-        <span class="hero-role-divider"></span>
-        <span>University of Kashmir</span>
-      </div>
-
-      <p class="hero-bio">Final-year electrical engineering student from Bandipora, Kashmir — with hands-on internship experience at an NHPC hydropower station. Passionate about power infrastructure, energy systems, and bridging theory with practice.</p>
-
-      <div class="hero-actions">
-        <a href="#experience" class="btn btn-primary">View Experience</a>
-        <a href="mailto:saif.ul.fayaz@outlook.com" class="btn btn-outline">Get in Touch</a>
+      <p class="h-bio">A dedicated electrical engineering student from Bandipora, Kashmir — with hands-on internship experience at the Kishanganga Hydroelectric Power Station under NHPC Limited, and a strong four-year academic foundation. Graduating 2026.</p>
+      <div class="btn-row">
+        <a href="#experience" class="btn btn-p">View Experience</a>
+        <a href="mailto:saif.ul.fayaz@outlook.com" class="btn btn-o">Get in Touch</a>
       </div>
     </div>
-
-    <div class="hero-right">
-      <div class="info-card">
-        <div class="ic-label">Current Program</div>
-        <div class="ic-value">B.Tech — Electrical Engineering</div>
-        <div class="ic-sub">University of Kashmir · 8th Semester</div>
+    <div class="h-cards">
+      <div class="hc">
+        <div class="hc-lbl">Current Program</div>
+        <div class="hc-val">B.Tech — Electrical Engineering</div>
+        <div class="hc-sub">University of Kashmir · 8th Semester</div>
       </div>
-      <div class="info-card">
-        <div class="ic-label">Internship</div>
-        <div class="ic-value">NHPC Limited</div>
-        <div class="ic-sub">Kishanganga Power Station, Bandipora</div>
+      <div class="hc">
+        <div class="hc-lbl">Industry Internship</div>
+        <div class="hc-val">NHPC Limited</div>
+        <div class="hc-sub">Kishanganga Power Station, Bandipora</div>
       </div>
-      <div class="stats-pair">
-        <div class="stat-card">
-          <div class="stat-num">2026</div>
-          <div class="stat-lbl">Expected Graduation</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">5+</div>
-          <div class="stat-lbl">Qualifications</div>
-        </div>
+      <div class="stat-row">
+        <div class="sc"><div class="sc-n">8th</div><div class="sc-l">Semester</div></div>
+        <div class="sc"><div class="sc-n">2026</div><div class="sc-l">Graduating</div></div>
+        <div class="sc"><div class="sc-n">5+</div><div class="sc-l">Qualifications</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
-<section class="section alt" id="about">
-  <div class="section-inner">
-    <div class="sec-eyebrow">Who I Am</div>
-    <h2 class="sec-title">About <em>Me</em></h2>
-    <div class="about-layout">
+<!-- ABOUT -->
+<section class="sec alt" id="about">
+  <div class="si">
+    <div class="ey">Who I Am</div>
+    <h2 class="sh">About <em>Me</em></h2>
+    <div class="about-grid">
       <div class="about-text">
-        <p>I am a final-year Electrical Engineering student at the University of Kashmir, expected to graduate in 2026. My academic journey has been driven by a genuine interest in power systems and energy infrastructure — fields central to modern development and India's clean energy future.</p>
-        <p>Alongside my core engineering programme, I hold an NCVT-certified COPA diploma from ITI Bandipora, providing me with a practical grounding in computing and IT that complements my engineering background effectively.</p>
-        <p>My year-long internship at the Kishanganga Hydroelectric Power Station under NHPC Limited was a formative experience — working inside a utility-grade facility deepened my understanding of large-scale power generation, electrical substation operations, and grid-level coordination. I come from Bandipora, a region with significant untapped renewable energy potential, and I am eager to contribute to its development.</p>
+        <p>I am a final-year Electrical Engineering student at the University of Kashmir, on track to graduate in 2026. My academic journey has been driven by a genuine passion for electrical systems, energy infrastructure, and the engineering principles that power modern society.</p>
+        <p>Beyond my core programme, I hold an NCVT-certified COPA diploma from ITI Bandipora — providing a practical grounding in computing and IT that complements my engineering background.</p>
+        <p>An internship at the Kishanganga Hydroelectric Power Station under NHPC Limited was one of the most valuable experiences of my education. Working inside a live utility environment gave me firsthand exposure to large-scale power generation, high-voltage substations, and grid-level operations — translating classroom knowledge into the real complexity of critical infrastructure. I come from Bandipora, a district with remarkable renewable energy potential, and I am determined to contribute to its future.</p>
       </div>
-      <div class="contact-stack">
+      <div class="c-box">
+        <div class="c-box-head">Contact Details</div>
+        <!-- Email -->
         <div class="c-row">
-          <div class="c-icon">✉</div>
-          <div>
-            <div class="c-lbl">Email</div>
-            <div class="c-val"><a href="mailto:saif.ul.fayaz@outlook.com">saif.ul.fayaz@outlook.com</a></div>
+          <div class="c-ico-wrap">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </div>
+          <div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:saif.ul.fayaz@outlook.com">saif.ul.fayaz@outlook.com</a></div></div>
         </div>
+        <!-- Phone -->
         <div class="c-row">
-          <div class="c-icon">📞</div>
-          <div>
-            <div class="c-lbl">Phone</div>
-            <div class="c-val">+91 78899 51631</div>
+          <div class="c-ico-wrap">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.1 2.82 2 2 0 012.08 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
+          <div><div class="c-lbl">Phone</div><div class="c-val">+91 78899 51631</div></div>
         </div>
+        <!-- Location -->
         <div class="c-row">
-          <div class="c-icon">📍</div>
-          <div>
-            <div class="c-lbl">Location</div>
-            <div class="c-val">Bandipora, J&K — 193502</div>
+          <div class="c-ico-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
           </div>
+          <div><div class="c-lbl">Location</div><div class="c-val">Bandipora, J&K — 193502</div></div>
         </div>
+        <!-- University -->
         <div class="c-row">
-          <div class="c-icon">🎓</div>
-          <div>
-            <div class="c-lbl">University</div>
-            <div class="c-val">University of Kashmir</div>
+          <div class="c-ico-wrap">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
+          <div><div class="c-lbl">University</div><div class="c-val">University of Kashmir</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ EDUCATION ═══ -->
-<section class="section" id="education">
-  <div class="section-inner">
-    <div class="sec-eyebrow">Academic Background</div>
-    <h2 class="sec-title"><em>Education</em></h2>
-    <div class="edu-grid">
-
-      <!-- Featured -->
-      <div class="edu-card span-full">
-        <div class="edu-inner">
-          <div>
-            <div class="edu-period">2022 — 2026 (Expected)</div>
-            <div class="edu-degree">Bachelor of Technology — Electrical Engineering</div>
-            <div class="edu-school">University of Kashmir</div>
-            <div class="edu-desc">Currently in the 8th and final semester. Core coursework covers power systems, electrical machines, circuit theory, control systems, electronics, and advanced electives including restructuring of power systems and power market economics.</div>
-          </div>
-          <div><span class="edu-badge">8th Sem · In Progress</span></div>
+<!-- EDUCATION -->
+<section class="sec main" id="education">
+  <div class="si">
+    <div class="ey">Academic Background</div>
+    <h2 class="sh"><em>Education</em></h2>
+    <div class="edu-wrap">
+      <div class="edu-row top">
+        <div class="edu-left">
+          <div class="edu-yr">2022 — 2026<br/>Expected</div>
+          <span class="edu-chip">Ongoing</span>
+        </div>
+        <div class="edu-right">
+          <div class="edu-deg">B.Tech — Electrical Engineering</div>
+          <div class="edu-sch">University of Kashmir</div>
+          <div class="edu-desc">Currently in the 8th and final semester. Coursework covers power systems, electrical machines, circuit theory, control systems, electronics, instrumentation, and electives including restructuring of power systems.</div>
         </div>
       </div>
-
-      <div class="edu-card">
-        <div class="edu-period">Vocational Diploma · 1 Year</div>
-        <div class="edu-degree">COPA</div>
-        <div class="edu-school">ITI Bandipora · National Council for Vocational Training</div>
-        <div class="edu-desc">Computer Operator &amp; Programming Assistant — IT fundamentals, MS Office, basic programming, and computer operations.</div>
-        <span class="edu-badge">NCVT Certified</span>
-      </div>
-
-      <div class="edu-card">
-        <div class="edu-period">Higher Secondary — 12th</div>
-        <div class="edu-degree">Science Stream</div>
-        <div class="edu-school">NM Boys Higher Secondary School, Bandipora</div>
-        <div class="edu-desc">Physics, Mathematics, and Chemistry — laying the academic groundwork for engineering studies at university level.</div>
-      </div>
-
-      <div class="edu-card">
-        <div class="edu-period">Secondary — 10th</div>
-        <div class="edu-degree">General Education</div>
-        <div class="edu-school">Faiz-e-Aam Secondary School, Bandipora</div>
-        <div class="edu-desc">Strong foundation in Mathematics and Sciences, cultivating early curiosity and academic discipline.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ EXPERIENCE ═══ -->
-<section class="section alt" id="experience">
-  <div class="section-inner">
-    <div class="sec-eyebrow">Industry Exposure</div>
-    <h2 class="sec-title">Work <em>Experience</em></h2>
-    <div class="exp-wrapper">
-      <div class="exp-layout">
-        <div class="exp-aside">
-          <div>
-            <div class="exp-logo">KP</div>
-            <div class="exp-aside-type">Engineering Internship</div>
-            <div class="exp-aside-co">Kishanganga Power Station</div>
-            <div class="exp-aside-org">NHPC Limited</div>
-          </div>
-          <div class="exp-aside-dur">Duration: 1 Year<br/>Bandipora, Jammu &amp; Kashmir</div>
+      <div class="edu-row">
+        <div class="edu-left">
+          <div class="edu-yr">Diploma</div>
+          <span class="edu-chip">NCVT</span>
         </div>
-        <div class="exp-main">
-          <div class="exp-title">Engineering <em>Intern</em></div>
-          <p class="exp-body">Completed a year-long internship at the Kishanganga Hydroelectric Power Station — a significant run-of-river project operated by NHPC Limited, one of India's foremost hydropower corporations. Gained firsthand exposure to large-scale power generation operations, high-voltage electrical substation infrastructure, and the systems governing utility-grade power evacuation to the grid. The experience provided invaluable insight into how academic principles translate into the complex reality of managing critical national energy infrastructure.</p>
-          <div class="tag-row">
-            <span class="tag">Hydropower</span>
-            <span class="tag">NHPC Limited</span>
-            <span class="tag">Power Generation</span>
-            <span class="tag">Electrical Substations</span>
-            <span class="tag">Power Evacuation</span>
-            <span class="tag">Grid Operations</span>
-          </div>
+        <div class="edu-right">
+          <div class="edu-deg">COPA — Computer Operator &amp; Programming Assistant</div>
+          <div class="edu-sch">ITI Bandipora · National Council for Vocational Training</div>
+          <div class="edu-desc">IT fundamentals, MS Office Suite, basic programming and computer operations — nationally certified.</div>
+        </div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-left">
+          <div class="edu-yr">Higher<br/>Secondary</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-deg">12th Class</div>
+          <div class="edu-sch">NM Boys Higher Secondary School, Bandipora</div>
+          <div class="edu-desc">Completed higher secondary education, forming the academic foundation for engineering studies.</div>
+        </div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-left">
+          <div class="edu-yr">Secondary</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-deg">10th Class</div>
+          <div class="edu-sch">Faiz-e-Aam Secondary School, Bandipora</div>
+          <div class="edu-desc">Strong foundation in mathematics and sciences, building early academic discipline.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SKILLS ═══ -->
-<section class="section" id="skills">
-  <div class="section-inner">
-    <div class="sec-eyebrow">Capabilities</div>
-    <h2 class="sec-title">Skills &amp; <em>Expertise</em></h2>
-    <div class="skills-grid">
+<!-- EXPERIENCE -->
+<section class="sec alt" id="experience">
+  <div class="si">
+    <div class="ey">Industry Exposure</div>
+    <h2 class="sh">Work <em>Experience</em></h2>
+    <div class="exp-card">
+      <div class="exp-head">
 
-      <div class="skill-card">
+        <!-- NHPC SVG logo — clean, real brand colours -->
+        <div class="nhpc-wrap">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <!-- Blue top half -->
+            <rect x="0" y="0" width="80" height="38" rx="0" fill="#003d7a"/>
+            <!-- Green bottom half -->
+            <rect x="0" y="38" width="80" height="42" rx="0" fill="#ffffff"/>
+            <!-- White NHPC text on blue -->
+            <text x="40" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">NHPC</text>
+            <!-- Green NHPC text on white -->
+            <text x="40" y="58" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="900" fill="#003d7a" text-anchor="middle" letter-spacing="1.5">NHPC</text>
+            <!-- Divider line -->
+            <rect x="8" y="62" width="64" height="2" rx="1" fill="#008040"/>
+            <!-- Limited text -->
+            <text x="40" y="74" font-family="Arial,Helvetica,sans-serif" font-size="7" font-weight="700" fill="#008040" text-anchor="middle" letter-spacing="2">LIMITED</text>
+          </svg>
+        </div>
+
+        <div class="exp-info">
+          <div class="exp-type">Engineering Internship</div>
+          <div class="exp-co">Kishanganga Power Station</div>
+          <div class="exp-org">NHPC Limited — Bandipora, Jammu &amp; Kashmir</div>
+        </div>
+      </div>
+      <div class="exp-body">
+        <p>Completed an internship at the Kishanganga Hydroelectric Power Station — a major run-of-river project operated by NHPC Limited, one of India's largest hydropower corporations. Gained comprehensive exposure to utility-grade power generation, high-voltage substation infrastructure, and the systems coordinating power evacuation to the national grid. This experience translated engineering coursework into a practical understanding of large-scale energy infrastructure.</p>
+        <div class="tags">
+          <span class="tag">Hydropower</span>
+          <span class="tag">NHPC Limited</span>
+          <span class="tag">Power Generation</span>
+          <span class="tag">HV Substations</span>
+          <span class="tag">Power Evacuation</span>
+          <span class="tag">Grid Operations</span>
+          <span class="tag">Electrical Engineering</span>
+          <span class="tag">Utility Infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec main" id="skills">
+  <div class="si">
+    <div class="ey">Capabilities</div>
+    <h2 class="sh">Skills &amp; <em>Expertise</em></h2>
+    <div class="sk-grid">
+
+      <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-icon">⚡</div>
-          <div class="sk-title">Power Systems</div>
+          <div class="sk-ico-wrap">
+            <!-- Lightning bolt -->
+            <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="sk-ttl">Power Systems</div>
         </div>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Power Generation</span><span class="skill-item-pct">88%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Power Distribution</span><span class="skill-item-pct">82%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Hydroelectric Systems</span><span class="skill-item-pct">80%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Market Restructuring</span><span class="skill-item-pct">75%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Load Flow Analysis</span><span class="skill-item-pct">70%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:70%"></div></div>
-          </div>
+        <div class="sk-tags">
+          <span class="sk-t">Power Generation</span><span class="sk-t">Power Distribution</span>
+          <span class="sk-t">Hydroelectric Systems</span><span class="sk-t">Market Restructuring</span>
+          <span class="sk-t">Load Flow Analysis</span><span class="sk-t">Grid Operations</span>
         </div>
       </div>
 
-      <div class="skill-card">
+      <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-icon">🔌</div>
-          <div class="sk-title">Electrical Eng.</div>
+          <div class="sk-ico-wrap">
+            <!-- CPU/chip -->
+            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <div class="sk-ttl">Electrical Engineering</div>
         </div>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Circuit Theory</span><span class="skill-item-pct">90%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Electrical Machines</span><span class="skill-item-pct">85%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Control Systems</span><span class="skill-item-pct">78%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Electronics</span><span class="skill-item-pct">75%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Instrumentation</span><span class="skill-item-pct">72%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
-          </div>
+        <div class="sk-tags">
+          <span class="sk-t">Circuit Theory</span><span class="sk-t">Electrical Machines</span>
+          <span class="sk-t">Control Systems</span><span class="sk-t">Electronics</span>
+          <span class="sk-t">Instrumentation</span><span class="sk-t">High Voltage Systems</span>
         </div>
       </div>
 
-      <div class="skill-card">
+      <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-icon">💻</div>
-          <div class="sk-title">Computing &amp; IT</div>
+          <div class="sk-ico-wrap">
+            <!-- Monitor -->
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="sk-ttl">Computing &amp; IT</div>
         </div>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">MS Office Suite</span><span class="skill-item-pct">88%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+        <div class="sk-tags">
+          <span class="sk-t">MS Office Suite</span><span class="sk-t">Computer Operations</span>
+          <span class="sk-t">Basic Programming</span><span class="sk-t">Data Management</span>
+          <span class="sk-t">IT Fundamentals</span>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-head">
+          <div class="sk-ico-wrap">
+            <!-- Users -->
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Computer Operations</span><span class="skill-item-pct">85%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+          <div class="sk-ttl">Soft Skills</div>
+        </div>
+        <div class="sk-tags">
+          <span class="sk-t">Analytical Thinking</span><span class="sk-t">Problem Solving</span>
+          <span class="sk-t">Team Collaboration</span><span class="sk-t">Communication</span>
+          <span class="sk-t">Adaptability</span>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-head">
+          <div class="sk-ico-wrap">
+            <!-- Globe -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Basic Programming</span><span class="skill-item-pct">65%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:65%"></div></div>
+          <div class="sk-ttl">Languages</div>
+        </div>
+        <div class="sk-tags">
+          <span class="sk-t">English</span><span class="sk-t">Urdu</span>
+          <span class="sk-t">Kashmiri</span><span class="sk-t">Hindi</span>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-head">
+          <div class="sk-ico-wrap">
+            <!-- Factory/building -->
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <div class="skill-item">
-            <div class="skill-item-top"><span class="skill-item-name">Data Entry &amp; Management</span><span class="skill-item-pct">82%</span></div>
-            <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
-          </div>
+          <div class="sk-ttl">Industry Knowledge</div>
+        </div>
+        <div class="sk-tags">
+          <span class="sk-t">Utility Operations</span><span class="sk-t">Renewable Energy</span>
+          <span class="sk-t">NHPC Procedures</span><span class="sk-t">Safety Protocols</span>
+          <span class="sk-t">Technical Reporting</span>
         </div>
       </div>
 
@@ -708,12 +683,12 @@ footer{
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Saif Ul Fayaz</div>
-    <div class="footer-info">Bandipora, Jammu &amp; Kashmir · 193502</div>
-    <div class="footer-links">saif.ul.fayaz@outlook.com · +91 78899 51631</div>
+  <div class="ft">
+    <div class="ft-brand">Saif Ul Fayaz</div>
+    <div class="ft-mid">Bandipora, Jammu &amp; Kashmir · 193502</div>
+    <div class="ft-r">saif.ul.fayaz@outlook.com · +91 78899 51631</div>
   </div>
 </footer>
 
