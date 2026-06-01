@@ -4,488 +4,617 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Saif Ul Fayaz — Electrical Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+
 :root{
-  --bg:    #050808;
-  --bg2:   #07100d;
-  --panel: #0b1712;
-  --card:  #0f1d18;
-  --lift:  #152420;
-  --hi:    #1d302a;
+  --ink:     #0f1923;
+  --ink2:    #1e2d3d;
+  --ink3:    #354d63;
+  --muted:   #6b7f91;
+  --faint:   #9eafc0;
+  --line:    #dde4ea;
+  --line2:   #edf1f5;
 
-  --gold:  #c9a84c;
-  --gold2: #e8c76a;
-  --gold3: #f5df9a;
-  --gd:    rgba(201,168,76,.10);
-  --gm:    rgba(201,168,76,.20);
-  --gb:    rgba(201,168,76,.32);
+  --bg:      #ffffff;
+  --bg2:     #f8f9fb;
+  --bg3:     #f1f4f8;
+  --card:    #ffffff;
 
-  /* BRIGHTER text palette */
-  --w:   #f5efe0;
-  --t100:rgba(245,239,224,1.00);
-  --t90: rgba(245,239,224,.90);
-  --t75: rgba(245,239,224,.75);
-  --t55: rgba(245,239,224,.55);
-  --t30: rgba(245,239,224,.30);
-  --t10: rgba(245,239,224,.10);
-  --t06: rgba(245,239,224,.06);
+  --accent:  #1a56db;
+  --accent2: #2d6af5;
+  --accent3: #e8effe;
 
-  --sage: #6a9080;
-  --sage2:#3a5048;
+  --teal:    #0e9688;
+  --teal2:   #e0f5f3;
 
-  --bl:rgba(255,255,255,.06);
-  --bl2:rgba(255,255,255,.09);
+  --amber:   #d97706;
+  --amber2:  #fef3c7;
+  --amber3:  #fbbf24;
+
+  --radius:  10px;
+  --shadow:  0 1px 4px rgba(15,25,35,.06), 0 4px 16px rgba(15,25,35,.07);
+  --shadow2: 0 2px 8px rgba(15,25,35,.08), 0 12px 40px rgba(15,25,35,.10);
 }
-body{font-family:'Syne',sans-serif;background:#050808;color:var(--t90);line-height:1.65;overflow-x:hidden}
-::selection{background:rgba(201,168,76,.2);color:var(--gold2)}
-::-webkit-scrollbar{width:2px}::-webkit-scrollbar-track{background:#050808}::-webkit-scrollbar-thumb{background:#1d302a}
 
-/* ═══ NAV ═══ */
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::selection{background:#bfdbfe;color:var(--ink)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+
+/* ─────────────────────────────
+   NAV
+───────────────────────────── */
 nav{
   position:fixed;inset:0 0 auto;z-index:999;
-  height:60px;
+  height:64px;
   display:flex;align-items:center;
-  padding:0 clamp(1.5rem,5vw,4rem);gap:2rem;
-  background:rgba(5,8,8,.96);backdrop-filter:blur(24px);
-  border-bottom:1px solid rgba(201,168,76,.15);
+  padding:0 clamp(1.5rem,5vw,5rem);
+  gap:2rem;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
 }
 .n-brand{
-  font-family:'Fraunces',serif;
-  font-size:1.05rem;font-weight:700;
-  color:var(--gold);white-space:nowrap;flex-shrink:0;letter-spacing:.02em;
+  display:flex;align-items:center;gap:.7rem;
+  text-decoration:none;flex-shrink:0;
 }
+.n-monogram{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.n-monogram svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round}
+.n-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:600;
+  color:var(--ink);letter-spacing:.01em;
+}
+.n-name em{font-style:italic;color:var(--accent)}
 .n-links{display:flex;gap:clamp(.5rem,2vw,2rem);list-style:none;margin-left:auto;align-items:center}
 .n-links a{
-  font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--sage);text-decoration:none;transition:color .2s;white-space:nowrap;
+  font-size:.72rem;font-weight:500;letter-spacing:.06em;
+  color:var(--muted);text-decoration:none;transition:color .18s;
 }
-.n-links a:hover{color:var(--w)}
+.n-links a:hover{color:var(--ink)}
+.n-li{
+  display:flex;align-items:center;gap:.38rem;
+  text-decoration:none;
+  font-size:.72rem;font-weight:600;
+  color:var(--accent);
+  padding:.3rem .8rem;
+  border:1.5px solid rgba(26,86,219,.25);
+  border-radius:6px;
+  transition:all .18s;
+  flex-shrink:0;
+}
+.n-li:hover{background:var(--accent3);border-color:var(--accent)}
+.n-li svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
 .n-cta{
-  padding:.38rem 1.1rem;background:var(--gold);color:#050808;
-  font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  border-radius:2px;text-decoration:none;transition:all .2s;
-  white-space:nowrap;flex-shrink:0;
+  flex-shrink:0;
+  display:inline-flex;align-items:center;
+  padding:.38rem 1.15rem;
+  background:var(--ink);color:#fff;
+  font-size:.72rem;font-weight:600;letter-spacing:.04em;
+  border-radius:6px;text-decoration:none;
+  transition:all .18s;
 }
-.n-cta:hover{background:var(--gold2);transform:translateY(-1px)}
-.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:3px;margin-left:auto;flex-shrink:0}
-.ham span{display:block;width:20px;height:1.5px;background:var(--t90);border-radius:1px;transition:.25s}
+.n-cta:hover{background:var(--ink2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(15,25,35,.2)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;margin-left:auto}
+.ham span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:1px;transition:.25s}
 .ham.o span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .ham.o span:nth-child(2){opacity:0}
 .ham.o span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 .mob{
-  display:none;position:fixed;top:60px;inset-x:0;z-index:998;
-  background:rgba(5,8,8,.98);backdrop-filter:blur(24px);
-  border-bottom:1px solid rgba(201,168,76,.15);
-  flex-direction:column;padding:1.2rem clamp(1.5rem,5vw,4rem) 1.6rem;
+  display:none;position:fixed;top:64px;inset-x:0;z-index:998;
+  background:rgba(255,255,255,.98);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+  flex-direction:column;padding:1rem clamp(1.5rem,5vw,5rem) 1.5rem;
 }
 .mob.o{display:flex}
 .mob a{
-  font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--sage);text-decoration:none;
-  padding:.7rem 0;border-bottom:1px solid var(--bl);transition:color .2s;
+  font-size:.78rem;font-weight:500;
+  color:var(--muted);text-decoration:none;
+  padding:.65rem 0;border-bottom:1px solid var(--line2);transition:color .18s;
 }
 .mob a:last-child{border:none}
-.mob a:hover{color:var(--gold)}
+.mob a:hover{color:var(--ink)}
 
-/* ═══ HERO ═══ */
+/* ─────────────────────────────
+   HERO
+───────────────────────────── */
 .hero{
   min-height:100vh;
   display:grid;
-  grid-template-columns:1fr 400px;
-  padding-top:60px;
-  position:relative;overflow:hidden;
+  grid-template-columns:1fr 380px;
+  padding-top:64px;
 }
 .hero-left{
   display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(4rem,9vh,8rem) clamp(1.5rem,5vw,4rem) clamp(4rem,9vh,7rem);
-  background:var(--bg2);
+  padding:clamp(4rem,10vh,8rem) clamp(1.5rem,5vw,5rem);
+  background:var(--bg);
+  border-right:1px solid var(--line);
   position:relative;overflow:hidden;
+}
+/* subtle geometric pattern */
+.hero-left::before{
+  content:'';position:absolute;
+  right:-80px;bottom:-80px;
+  width:320px;height:320px;
+  border-radius:50%;
+  border:40px solid var(--line2);
+  pointer-events:none;
 }
 .hero-left::after{
   content:'';position:absolute;
-  top:15%;bottom:15%;right:0;width:1px;
-  background:linear-gradient(to bottom,transparent,rgba(201,168,76,.25) 30%,rgba(201,168,76,.25) 70%,transparent);
-}
-.hero-left::before{
-  content:'';position:absolute;
-  width:600px;height:600px;border-radius:50%;
-  top:-20%;left:-15%;
-  background:radial-gradient(circle,rgba(20,50,38,.6),transparent 65%);
+  right:60px;bottom:60px;
+  width:180px;height:180px;
+  border-radius:50%;
+  border:2px dashed var(--line);
   pointer-events:none;
 }
-/* top gold line */
-.hero::before{
-  content:'';position:absolute;top:60px;left:0;right:0;height:2px;z-index:2;
-  background:linear-gradient(90deg,var(--gold),rgba(201,168,76,.05) 60%,transparent 100%);
-}
 
-.hero-pill{
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:var(--gd);border:1px solid var(--gb);border-radius:100px;
-  padding:.35rem .9rem;
-  font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.8rem;align-self:flex-start;
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--accent3);
+  border:1px solid rgba(26,86,219,.18);
+  border-radius:100px;
+  padding:.3rem .9rem .3rem .55rem;
+  font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:2rem;align-self:flex-start;
 }
-.pill-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pdot 2s ease infinite}
-@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.2;transform:scale(.6)}}
+.eye-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent);
+  animation:pulse 2.2s ease infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.55)}}
 
-/* ── NAME on one line ── */
 h1{
-  font-family:'Fraunces',serif;
-  /* fluid: shrinks so it always fits in one line */
-  font-size:clamp(2.4rem,5.5vw,5.5rem);
-  font-weight:900;line-height:1;
-  color:var(--t100);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,5.8vw,6rem);
+  font-weight:700;line-height:.95;
+  color:var(--ink);
+  letter-spacing:-.02em;
+  margin-bottom:1.5rem;
   white-space:nowrap;
-  letter-spacing:-.03em;
-  margin-bottom:1.2rem;
 }
 h1 em{
-  font-style:italic;font-weight:400;color:var(--gold2);
-  margin-left:.15em;
+  font-style:italic;font-weight:400;
+  color:var(--accent);
 }
 
 .hero-role{
   display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
-  font-size:clamp(.8rem,1.1vw,.92rem);
-  font-weight:600;color:var(--t75);
-  margin-bottom:1.8rem;letter-spacing:.02em;
+  font-size:.88rem;font-weight:400;
+  color:var(--muted);
+  margin-bottom:1.6rem;
 }
-.hero-role strong{color:var(--t100);font-weight:700}
-.rdot{width:4px;height:4px;border-radius:50%;background:var(--sage2);flex-shrink:0}
+.hero-role strong{color:var(--ink2);font-weight:600}
+.rdot{width:4px;height:4px;border-radius:50%;background:var(--line);flex-shrink:0}
 
 .hero-bio{
-  font-size:clamp(.85rem,1.1vw,.94rem);
-  line-height:1.9;color:var(--t55);
-  max-width:500px;margin-bottom:2.6rem;font-weight:400;
+  font-size:.95rem;line-height:1.9;
+  color:var(--muted);
+  max-width:500px;margin-bottom:2.5rem;
 }
 
-.btn-group{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn-row{display:flex;gap:.65rem;flex-wrap:wrap}
 .btn{
-  display:inline-flex;align-items:center;gap:.5rem;
-  padding:.72rem 1.6rem;
-  font-family:'Syne',sans-serif;
-  font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  border-radius:2px;text-decoration:none;transition:all .22s;
+  display:inline-flex;align-items:center;gap:.42rem;
+  padding:.7rem 1.5rem;
+  font-family:'Outfit',sans-serif;
+  font-size:.72rem;font-weight:600;letter-spacing:.04em;
+  border-radius:7px;text-decoration:none;transition:all .2s;cursor:pointer;border:none;
 }
-.btn-solid{
-  background:var(--gold);color:#050808;border:1px solid var(--gold);
-  box-shadow:0 4px 24px rgba(201,168,76,.2);
+.btn-primary{
+  background:var(--ink);color:#fff;
+  box-shadow:0 2px 8px rgba(15,25,35,.18);
 }
-.btn-solid:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,168,76,.35)}
-.btn-outline{background:transparent;color:var(--t75);border:1px solid var(--bl2)}
-.btn-outline:hover{border-color:var(--gm);color:var(--gold);transform:translateY(-2px)}
+.btn-primary:hover{background:var(--ink2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,25,35,.22)}
+.btn-ghost{
+  background:var(--bg);color:var(--ink2);
+  border:1.5px solid var(--line);
+}
+.btn-ghost:hover{border-color:var(--ink3);background:var(--bg2);transform:translateY(-2px)}
+.btn-linkedin{
+  background:var(--accent3);color:var(--accent);
+  border:1.5px solid rgba(26,86,219,.2);
+}
+.btn-linkedin:hover{background:#dbeafe;border-color:var(--accent);transform:translateY(-2px)}
+.btn-linkedin svg,.btn-li svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
 
-/* right column */
+/* right sidebar */
 .hero-right{
+  background:var(--bg2);
   display:flex;flex-direction:column;
-  background:var(--panel);
-  padding:clamp(4rem,9vh,8rem) clamp(1.5rem,4vw,3rem) clamp(4rem,9vh,7rem);
-  gap:1.1rem;position:relative;
+  padding:clamp(4rem,10vh,8rem) 2rem clamp(4rem,10vh,7rem);
+  gap:.9rem;
 }
-.hero-right::before{
-  content:'';position:absolute;top:72px;right:0;
-  width:36px;height:36px;
-  border-top:2px solid var(--gold);border-right:2px solid var(--gold);
-  opacity:.25;
+.sidebar-label{
+  font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:.1rem;
+  padding-bottom:.75rem;border-bottom:1px solid var(--line);
 }
-.r-heading{
-  font-family:'Fraunces',serif;
-  font-size:.8rem;font-style:italic;font-weight:400;
-  color:var(--sage);letter-spacing:.04em;
-  margin-bottom:.3rem;padding-bottom:.8rem;
-  border-bottom:1px solid var(--bl);
-}
-.r-card{
-  background:var(--card);border:1px solid var(--bl);
-  border-radius:6px;padding:1.3rem 1.4rem;
-  position:relative;overflow:hidden;
-  transition:background .24s,border-color .24s,transform .24s;
-}
-.r-card::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,.1));
-}
-.r-card:hover{background:var(--lift);border-color:var(--gm);transform:translateX(4px)}
-.r-lbl{font-size:.52rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
-.r-val{
-  font-family:'Fraunces',serif;
-  font-size:1.05rem;font-weight:700;color:var(--t100);line-height:1.2;
-}
-.r-sub{font-size:.69rem;color:var(--sage);margin-top:.2rem;font-weight:500}
 
-.stat-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-.stat-c{
-  background:var(--card);border:1px solid var(--bl);
-  border-radius:6px;padding:1.05rem .7rem;text-align:center;
-  transition:background .22s,border-color .22s;
+.sc{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:1.1rem 1.25rem;
+  transition:box-shadow .2s,transform .2s;
+  position:relative;
 }
-.stat-c:hover{background:var(--lift);border-color:var(--gm)}
-.stat-n{font-family:'Fraunces',serif;font-size:1.65rem;font-weight:900;color:var(--gold);line-height:1}
-.stat-l{font-size:.54rem;color:var(--sage);margin-top:.28rem;letter-spacing:.04em;font-weight:600}
-
-/* ═══ SECTIONS ═══ */
-.sec{padding:clamp(4rem,8vh,7rem) clamp(1.5rem,5vw,4rem)}
-.sec.alt{background:var(--panel)}
-.sec.main{background:var(--bg2)}
-.si{max-width:1200px;margin:0 auto;width:100%}
-
-.sec-num{
-  font-family:'Fraunces',serif;
-  font-size:6rem;font-weight:900;
-  color:transparent;-webkit-text-stroke:1px rgba(201,168,76,.08);
-  line-height:1;margin-bottom:-.5rem;letter-spacing:-.05em;user-select:none;
+.sc:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.sc-label{font-size:.55rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.28rem}
+.sc-val{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);line-height:1.2}
+.sc-sub{font-size:.72rem;color:var(--muted);margin-top:.18rem}
+.sc-bar{
+  position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--accent);border-radius:var(--radius) 0 0 var(--radius);
 }
-.sec-ey{
-  display:flex;align-items:center;gap:.6rem;
-  font-size:.57rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.55rem;
-}
-.sec-ey::before{content:'';width:18px;height:1.5px;background:var(--gold);border-radius:1px}
-.sec-h{
-  font-family:'Fraunces',serif;
-  font-size:clamp(2rem,3.8vw,3.2rem);
-  font-weight:700;color:var(--t100);line-height:1.05;
-  margin-bottom:clamp(2.2rem,5vh,3.5rem);
-}
-.sec-h em{font-style:italic;font-weight:400;color:var(--gold2)}
 
-.rule{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.2) 25%,rgba(201,168,76,.2) 75%,transparent)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.stat{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem .5rem;text-align:center;
+  transition:box-shadow .2s,transform .2s;
+}
+.stat:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.stat-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:700;color:var(--ink);line-height:1;
+}
+.stat-l{font-size:.55rem;font-weight:600;letter-spacing:.06em;color:var(--muted);margin-top:.25rem;text-transform:uppercase}
 
-/* ═══ ABOUT ═══ */
-.about-layout{
-  display:grid;grid-template-columns:1fr 290px;
+.li-card{
+  background:var(--card);border:1.5px solid rgba(26,86,219,.2);
+  border-radius:var(--radius);
+  padding:1rem 1.25rem;
+  display:flex;align-items:center;gap:.8rem;
+  text-decoration:none;
+  transition:all .2s;
+}
+.li-card:hover{background:var(--accent3);border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-2px)}
+.li-icon{
+  width:36px;height:36px;border-radius:7px;
+  background:#0a66c2;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.li-icon svg{width:18px;height:18px;fill:#fff}
+.li-text-label{font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.15rem}
+.li-text-val{font-size:.8rem;font-weight:600;color:var(--accent)}
+
+/* ─────────────────────────────
+   SECTION CHROME
+───────────────────────────── */
+.section{padding:clamp(4rem,8vh,7rem) clamp(1.5rem,5vw,5rem)}
+.section.stripe{background:var(--bg2)}
+.section.white{background:var(--bg)}
+.si{max-width:1160px;margin:0 auto}
+
+.s-eyebrow{
+  display:flex;align-items:center;gap:.55rem;
+  font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.65rem;
+}
+.s-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:1px}
+.s-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4.5rem;font-weight:700;
+  color:var(--line2);
+  line-height:1;margin-bottom:-.35rem;
+  letter-spacing:-.04em;user-select:none;
+}
+.s-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,3.8vw,3.4rem);
+  font-weight:600;color:var(--ink);line-height:1.05;
+  margin-bottom:clamp(2rem,5vh,3.5rem);
+}
+.s-h em{font-style:italic;font-weight:400;color:var(--accent)}
+.divider{height:1px;background:var(--line)}
+
+/* ─────────────────────────────
+   ABOUT
+───────────────────────────── */
+.about-grid{
+  display:grid;grid-template-columns:1fr 280px;
   gap:clamp(2.5rem,5vw,5rem);align-items:start;
 }
-/* brighter body copy */
 .about-text p{
-  font-size:.91rem;line-height:1.95;
-  color:var(--t75);margin-bottom:1.15rem;font-weight:400;
+  font-size:.93rem;line-height:1.9;
+  color:var(--muted);margin-bottom:1.1rem;
 }
 .about-text p:last-child{margin-bottom:0}
 
 .contact-card{
-  background:var(--card);border:1px solid var(--bl);
-  border-radius:8px;overflow:hidden;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
 }
 .cc-head{
-  padding:.85rem 1.3rem;background:var(--lift);
-  border-bottom:1px solid var(--gm);
-  font-size:.56rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
-}
-.cc-item{
-  display:flex;align-items:center;gap:.9rem;
-  padding:.92rem 1.3rem;border-bottom:1px solid var(--bl);transition:background .18s;
-}
-.cc-item:last-child{border-bottom:none}
-.cc-item:hover{background:var(--lift)}
-.cc-ico{
-  width:30px;height:30px;flex-shrink:0;
-  border-radius:6px;background:var(--gd);border:1px solid var(--gm);
-  display:flex;align-items:center;justify-content:center;
-}
-.cc-ico svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.cc-lbl{font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:.06rem}
-.cc-val{font-size:.8rem;color:var(--t90);font-weight:500}
-.cc-val a{color:var(--t90);text-decoration:none;transition:color .2s}
-.cc-val a:hover{color:var(--gold)}
-
-/* ═══ EDUCATION ═══ */
-.edu-board{
-  display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:var(--bl);border:1px solid var(--bl);
-  border-radius:10px;overflow:hidden;
-}
-.edu-block{
-  background:var(--card);padding:1.8rem 2rem;
-  position:relative;transition:background .2s;
-}
-.edu-block:hover{background:var(--lift)}
-.edu-block.span2{grid-column:1/-1}
-.edu-block.span2::before{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--bl);
-}
-.edu-block.span2::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--gold),rgba(201,168,76,.1));
-}
-.edu-period{
-  font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.45rem;
+  padding:.8rem 1.2rem;
+  background:var(--bg3);
+  border-bottom:1px solid var(--line);
+  font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink3);
   display:flex;align-items:center;gap:.5rem;
 }
-.edu-tag{
-  display:inline-flex;background:var(--gold);color:#050808;
-  font-size:.48rem;font-weight:700;
-  padding:.14rem .5rem;border-radius:2px;letter-spacing:.08em;text-transform:uppercase;
+.cc-head::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.cc-row{
+  display:flex;align-items:center;gap:.85rem;
+  padding:.85rem 1.2rem;
+  border-bottom:1px solid var(--line2);
+  transition:background .15s;
+  text-decoration:none;
 }
-/* brighter edu text */
-.edu-title{
-  font-family:'Fraunces',serif;
-  font-size:1.05rem;font-weight:700;color:var(--t100);
-  line-height:1.25;margin-bottom:.22rem;
+.cc-row:last-child{border:none}
+.cc-row:hover{background:var(--bg2)}
+.cc-icon{
+  width:30px;height:30px;border-radius:7px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg3);
+  border:1px solid var(--line);
 }
-.edu-school{font-size:.73rem;color:var(--sage);margin-bottom:.6rem;font-weight:600}
-.edu-desc{font-size:.77rem;line-height:1.8;color:var(--t55)}
+.cc-icon svg{width:13px;height:13px;stroke:var(--ink3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cc-icon.li{background:#e8f1fb;border-color:#bedaf5}
+.cc-icon.li svg{stroke:none;fill:#0a66c2;width:14px;height:14px}
+.cc-lbl{font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.06rem}
+.cc-val{font-size:.8rem;font-weight:500;color:var(--ink2)}
+.cc-val a{color:var(--ink2);text-decoration:none}
+.cc-val a:hover{color:var(--accent)}
 
-/* ═══ EXPERIENCE ═══ */
-.exp-wrap{
-  background:var(--card);border:1px solid var(--bl);
-  border-radius:10px;overflow:hidden;
-}
-.exp-banner{
-  background:var(--lift);
-  border-bottom:1px solid rgba(201,168,76,.18);
-  display:grid;grid-template-columns:auto 1fr;
+/* ─────────────────────────────
+   EDUCATION
+───────────────────────────── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.edu-card{
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:var(--radius);padding:1.7rem 1.8rem;
+  box-shadow:var(--shadow);
+  transition:box-shadow .2s,transform .2s;
   position:relative;overflow:hidden;
 }
-.exp-banner::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold) 40%,var(--gold2) 60%,transparent);
+.edu-card:hover{box-shadow:var(--shadow2);transform:translateY(-3px)}
+.edu-card.featured{grid-column:1/-1}
+.edu-card.featured::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--teal));
 }
-.exp-banner::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 100% at 0% 50%,rgba(201,168,76,.05),transparent 60%);
-}
-.exp-logo-col{
-  display:flex;align-items:center;justify-content:center;
-  padding:2rem 2rem 2rem 2.5rem;
-  border-right:1px solid rgba(201,168,76,.12);
-  position:relative;z-index:1;
-}
-.nhpc-badge{
-  width:76px;height:76px;border-radius:8px;background:#fff;overflow:hidden;
-  box-shadow:0 4px 24px rgba(0,0,0,.6),0 0 0 1px rgba(201,168,76,.1);
-}
-.nhpc-badge svg{display:block;width:100%;height:100%}
-.exp-text-col{padding:2rem 2.5rem;position:relative;z-index:1}
-.exp-kicker{
-  font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.35rem;
+.edu-period{
+  font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.45rem;
   display:flex;align-items:center;gap:.5rem;
 }
-.exp-kicker::before{content:'';width:14px;height:1px;background:var(--gold)}
-/* brighter exp title */
-.exp-name{
-  font-family:'Fraunces',serif;
-  font-size:1.5rem;font-weight:700;color:var(--t100);
-  line-height:1.15;margin-bottom:.25rem;
+.edu-badge{
+  background:var(--accent);color:#fff;
+  font-size:.5rem;font-weight:700;
+  padding:.1rem .45rem;border-radius:3px;letter-spacing:.08em;
 }
-.exp-org{font-size:.76rem;color:var(--sage);font-weight:600}
-.exp-body{padding:2rem 2.5rem}
-/* brighter exp description */
-.exp-body p{
-  font-size:.9rem;line-height:1.95;
-  color:var(--t75);margin-bottom:1.7rem;font-weight:400;
+.edu-badge.ongoing{background:var(--teal)}
+.edu-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:600;color:var(--ink);
+  line-height:1.25;margin-bottom:.2rem;
 }
-.tags{display:flex;flex-wrap:wrap;gap:.4rem}
-.tag{
-  background:var(--gd);border:1px solid var(--gm);
-  color:var(--gold2);font-size:.65rem;font-weight:600;
-  padding:.22rem .72rem;border-radius:2px;letter-spacing:.05em;
-  transition:background .16s,color .16s;
-}
-.tag:hover{background:var(--gm);color:var(--gold3)}
+.edu-school{font-size:.75rem;color:var(--muted);margin-bottom:.65rem;font-weight:500}
+.edu-desc{font-size:.79rem;line-height:1.8;color:var(--faint)}
 
-/* ═══ SKILLS ═══ */
-.sk-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--bl);
-  border:1px solid var(--bl);border-radius:10px;overflow:hidden;
+/* ─────────────────────────────
+   EXPERIENCE
+───────────────────────────── */
+.exp-card{
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
 }
-.sk-card{
-  background:var(--card);padding:1.6rem 1.7rem;
-  transition:background .2s;position:relative;
+.exp-header{
+  display:grid;grid-template-columns:auto 1fr;
+  background:var(--bg2);
+  border-bottom:1px solid var(--line);
+  position:relative;
 }
-.sk-card:hover{background:var(--lift)}
-.sk-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:1.5px;
-  background:linear-gradient(90deg,var(--gold),transparent 60%);
-  opacity:0;transition:opacity .3s;
+.exp-header::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--teal));
 }
-.sk-card:hover::after{opacity:1}
-.sk-head{
-  display:flex;align-items:center;gap:.65rem;
-  padding-bottom:.9rem;margin-bottom:1rem;
-  border-bottom:1px solid var(--bl);
-}
-.sk-ico{
-  width:30px;height:30px;border-radius:6px;
-  background:var(--gd);border:1px solid var(--gm);
+.exp-logo-wrap{
+  padding:1.8rem 1.5rem 1.8rem 2rem;
+  border-right:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;
 }
-.sk-ico svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-/* brighter skill name */
-.sk-name{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--t75)}
-.chip-wrap{display:flex;flex-wrap:wrap;gap:.35rem}
-/* brighter chips */
-.chip{
-  background:rgba(245,239,224,.06);border:1px solid rgba(245,239,224,.1);
-  color:var(--t55);font-size:.71rem;font-weight:500;
-  padding:.25rem .65rem;border-radius:3px;
-  transition:all .16s;cursor:default;
+/* Clean NHPC text-based badge — no dodgy SVG logos */
+.nhpc-mark{
+  width:80px;height:80px;border-radius:10px;
+  background:#003579;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;
+  box-shadow:0 4px 16px rgba(0,53,121,.22);
 }
-.chip:hover{background:var(--gd);border-color:var(--gm);color:var(--gold2)}
+.nhpc-mark .nm-top{
+  font-family:'Outfit',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:#fff;letter-spacing:.06em;line-height:1;
+}
+.nhpc-mark .nm-mid{
+  width:44px;height:2px;background:#007a38;border-radius:1px;
+}
+.nhpc-mark .nm-bot{
+  font-family:'Outfit',sans-serif;
+  font-size:.38rem;font-weight:600;
+  color:#d0e8ff;letter-spacing:.18em;line-height:1;
+}
+.exp-meta{padding:1.8rem 2rem}
+.exp-type{
+  font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.35rem;
+  display:flex;align-items:center;gap:.45rem;
+}
+.exp-type::before{content:'';width:12px;height:1.5px;background:var(--accent);border-radius:1px}
+.exp-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:600;color:var(--ink);
+  line-height:1.15;margin-bottom:.22rem;
+}
+.exp-org{font-size:.78rem;color:var(--muted);font-weight:500}
+.exp-body{padding:1.8rem 2rem 2rem}
+.exp-body p{font-size:.9rem;line-height:1.9;color:var(--muted);margin-bottom:1.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{
+  background:var(--bg3);border:1px solid var(--line);
+  color:var(--ink3);font-size:.66rem;font-weight:500;
+  padding:.22rem .75rem;border-radius:100px;
+  transition:all .15s;
+}
+.tag:hover{background:var(--accent3);border-color:rgba(26,86,219,.25);color:var(--accent)}
 
-/* ═══ FOOTER ═══ */
-footer{
-  background:var(--bg2);border-top:1px solid rgba(201,168,76,.15);
-  padding:1.8rem clamp(1.5rem,5vw,4rem);
+/* ─────────────────────────────
+   SKILLS
+───────────────────────────── */
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.sk-card{
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:var(--radius);padding:1.5rem 1.6rem;
+  box-shadow:var(--shadow);
+  transition:box-shadow .2s,transform .2s;
+  position:relative;overflow:hidden;
 }
-.ft{
-  max-width:1200px;margin:0 auto;
+.sk-card:hover{box-shadow:var(--shadow2);transform:translateY(-3px)}
+.sk-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent 70%);
+  opacity:0;transition:opacity .25s;
+}
+.sk-card:hover::before{opacity:1}
+.sk-head{
+  display:flex;align-items:center;gap:.6rem;
+  margin-bottom:.9rem;padding-bottom:.85rem;
+  border-bottom:1px solid var(--line2);
+}
+.sk-icon{
+  width:32px;height:32px;border-radius:7px;flex-shrink:0;
+  background:var(--bg3);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+}
+.sk-icon svg{width:14px;height:14px;stroke:var(--ink3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sk-name{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.chip{
+  background:var(--bg2);border:1px solid var(--line);
+  color:var(--ink3);font-size:.7rem;font-weight:400;
+  padding:.22rem .6rem;border-radius:5px;
+  transition:all .15s;
+}
+.chip:hover{background:var(--accent3);border-color:rgba(26,86,219,.2);color:var(--accent)}
+
+/* ─────────────────────────────
+   FOOTER
+───────────────────────────── */
+footer{
+  background:var(--ink);
+  padding:3rem clamp(1.5rem,5vw,5rem) 2.5rem;
+}
+.ft-inner{max-width:1160px;margin:0 auto}
+.ft-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  flex-wrap:wrap;gap:2.5rem;
+  margin-bottom:2.5rem;padding-bottom:2.5rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.ft-brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-weight:600;
+  color:#fff;margin-bottom:.3rem;
+}
+.ft-brand-name em{font-style:italic;color:rgba(255,255,255,.45)}
+.ft-tagline{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:400}
+.ft-nav{display:flex;flex-direction:column;gap:.7rem}
+.ft-nav a{
+  font-size:.72rem;font-weight:400;
+  color:rgba(255,255,255,.4);text-decoration:none;transition:color .18s;
+}
+.ft-nav a:hover{color:#fff}
+.ft-contact-col{display:flex;flex-direction:column;gap:.7rem}
+.ft-contact-item{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.75rem;color:rgba(255,255,255,.45);
+}
+.ft-contact-item a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .18s}
+.ft-contact-item a:hover{color:#fff}
+.ft-contact-item svg{width:13px;height:13px;stroke:rgba(255,255,255,.3);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ft-li-row{
+  display:flex;align-items:center;gap:.55rem;
+  padding:.55rem .9rem;
+  background:rgba(10,102,194,.2);
+  border:1px solid rgba(10,102,194,.3);
+  border-radius:7px;
+  text-decoration:none;
+  font-size:.72rem;font-weight:500;
+  color:#93c5fd;
+  transition:all .18s;
+  align-self:flex-start;
+}
+.ft-li-row:hover{background:rgba(10,102,194,.35);color:#fff;border-color:rgba(10,102,194,.5)}
+.ft-li-row svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
+.ft-bottom{
   display:flex;justify-content:space-between;align-items:center;
   flex-wrap:wrap;gap:.75rem;
 }
-.ft-brand{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--gold)}
-.ft-mid,.ft-r{font-size:.68rem;color:var(--sage);font-weight:500}
+.ft-copy{font-size:.68rem;color:rgba(255,255,255,.25)}
 
-/* ═══ ANIMATIONS ═══ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-pill {animation:fadeUp .5s .00s both}
-h1         {animation:fadeUp .5s .08s both}
-.hero-role {animation:fadeUp .5s .15s both}
-.hero-bio  {animation:fadeUp .5s .22s both}
-.btn-group {animation:fadeUp .5s .29s both}
-.hero-right{animation:fadeUp .5s .10s both}
+/* ─────────────────────────────
+   ANIMATIONS
+───────────────────────────── */
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:up .5s .05s both}
+h1            {animation:up .5s .12s both}
+.hero-role    {animation:up .5s .19s both}
+.hero-bio     {animation:up .5s .26s both}
+.btn-row      {animation:up .5s .33s both}
+.hero-right   {animation:up .5s .1s both}
 
-/* ═══ TABLET ≤ 960px ═══ */
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left{padding:calc(60px + 3rem) clamp(1.5rem,5vw,4rem) 3rem}
-  .hero-left::after{display:none}
-  h1{font-size:clamp(2.4rem,7.5vw,4.4rem);white-space:normal}
-  .hero-right{
-    padding:2.5rem clamp(1.5rem,5vw,4rem);
-    display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start;
-  }
-  .hero-right::before{display:none}
-  .r-heading{grid-column:1/-1}
-  .stat-trio{grid-column:1/-1}
-  .about-layout{grid-template-columns:1fr}
-  .edu-board{grid-template-columns:1fr}
-  .edu-block.span2{grid-column:auto}
-  .exp-banner{grid-template-columns:1fr}
-  .exp-logo-col{border-right:none;border-bottom:1px solid rgba(201,168,76,.12);padding:1.5rem 2rem}
-  .exp-text-col{padding:1.5rem 2rem}
+  .hero-left{padding:calc(64px + 3rem) clamp(1.5rem,5vw,5rem) 3rem;border-right:none;border-bottom:1px solid var(--line)}
+  h1{font-size:clamp(2.8rem,8vw,4.5rem);white-space:normal}
+  .hero-left::before,.hero-left::after{display:none}
+  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;padding:2rem clamp(1.5rem,5vw,5rem)}
+  .sidebar-label{grid-column:1/-1}
+  .stats{grid-column:1/-1}
+  .li-card{grid-column:1/-1}
+  .n-li{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .edu-card.featured{grid-column:auto}
+  .exp-header{grid-template-columns:1fr}
+  .exp-logo-wrap{border-right:none;border-bottom:1px solid var(--line);padding:1.3rem 2rem}
   .sk-grid{grid-template-columns:1fr 1fr}
 }
-
-/* ═══ MOBILE ≤ 600px ═══ */
-@media(max-width:600px){
-  .n-links,.n-cta{display:none}
+@media(max-width:620px){
+  .n-links,.n-cta,.n-li{display:none}
   .ham{display:flex}
-  h1{font-size:clamp(1.9rem,8.5vw,2.8rem);white-space:nowrap}
+  h1{font-size:clamp(2.2rem,9vw,3rem);white-space:nowrap}
   .hero-right{grid-template-columns:1fr}
-  .stat-trio{display:grid;grid-template-columns:repeat(3,1fr)}
-  .exp-logo-col{padding:1.2rem 1.5rem}
-  .exp-text-col{padding:1.2rem 1.5rem}
-  .exp-body{padding:1.4rem 1.5rem}
   .sk-grid{grid-template-columns:1fr}
-  .ft{flex-direction:column;text-align:center}
+  .ft-top{flex-direction:column;gap:1.8rem}
+  .ft-bottom{flex-direction:column;text-align:center}
 }
 </style>
 </head>
@@ -493,14 +622,25 @@ h1         {animation:fadeUp .5s .08s both}
 
 <!-- NAV -->
 <nav>
-  <div class="n-brand">Saif Ul Fayaz</div>
+  <a href="#" class="n-brand">
+    <div class="n-monogram">
+      <svg viewBox="0 0 20 20">
+        <path d="M10 2L2 6v8l8 4 8-4V6L10 2z"/>
+      </svg>
+    </div>
+    <div class="n-name">Saif Ul <em>Fayaz</em></div>
+  </a>
   <ul class="n-links">
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
   </ul>
-  <a href="mailto:saif.ul.fayaz@outlook.com" class="n-cta">Contact</a>
+  <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="n-li">
+    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+    LinkedIn
+  </a>
+  <a href="mailto:contact@saiful.in" class="n-cta">Contact</a>
   <div class="ham" id="hm" onclick="this.classList.toggle('o');document.getElementById('mb').classList.toggle('o')">
     <span></span><span></span><span></span>
   </div>
@@ -510,60 +650,75 @@ h1         {animation:fadeUp .5s .08s both}
   <a href="#education"  onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Education</a>
   <a href="#experience" onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Experience</a>
   <a href="#skills"     onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Skills</a>
-  <a href="mailto:saif.ul.fayaz@outlook.com">saif.ul.fayaz@outlook.com</a>
+  <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener">LinkedIn Profile →</a>
+  <a href="mailto:contact@saiful.in">contact@saiful.in</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-pill"><span class="pill-dot"></span>B.Tech · Electrical Engineering</div>
-
-    <!-- Name on ONE line — fluid font-size ensures it never wraps -->
-    <h1>Saif Ul <em>Fayaz</em></h1>
-
+    <div class="hero-eyebrow">
+      <span class="eye-dot"></span>
+      B.Tech · Electrical Engineering · 2026
+    </div>
+    <h1>Saif Ul<br><em>Fayaz</em></h1>
     <div class="hero-role">
       <strong>Final Year Student</strong>
       <span class="rdot"></span>
-      B.Tech Electrical Engineering
-      <span class="rdot"></span>
       University of Kashmir
+      <span class="rdot"></span>
+      Bandipora, J&amp;K
     </div>
-    <p class="hero-bio">A disciplined electrical engineering student from Bandipora, Kashmir — with hands-on internship experience at the Kishanganga Hydroelectric Power Station under NHPC Limited and a strong four-year academic foundation. Graduating 2026.</p>
-    <div class="btn-group">
-      <a href="#experience" class="btn btn-solid">View Experience</a>
-      <a href="mailto:saif.ul.fayaz@outlook.com" class="btn btn-outline">Get in Touch</a>
+    <p class="hero-bio">An electrical engineering student with hands-on internship experience at the Kishanganga Hydroelectric Power Station under NHPC Limited. Four years of rigorous academic training, graduating 2026.</p>
+    <div class="btn-row">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="mailto:contact@saiful.in" class="btn btn-ghost">Get in Touch</a>
+      <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="btn btn-linkedin">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
     </div>
   </div>
-
   <div class="hero-right">
-    <div class="r-heading">Quick Profile</div>
-    <div class="r-card">
-      <div class="r-lbl">Current Program</div>
-      <div class="r-val">B.Tech — Electrical Engineering</div>
-      <div class="r-sub">University of Kashmir · 8th Semester</div>
+    <div class="sidebar-label">Quick Profile</div>
+    <div class="sc">
+      <div class="sc-bar"></div>
+      <div class="sc-label">Current Program</div>
+      <div class="sc-val">B.Tech — Electrical Engineering</div>
+      <div class="sc-sub">University of Kashmir · 8th Semester</div>
     </div>
-    <div class="r-card">
-      <div class="r-lbl">Industry Internship</div>
-      <div class="r-val">NHPC Limited</div>
-      <div class="r-sub">Kishanganga Power Station, Bandipora</div>
+    <div class="sc">
+      <div class="sc-bar" style="background:var(--teal)"></div>
+      <div class="sc-label">Industry Internship</div>
+      <div class="sc-val">NHPC Limited</div>
+      <div class="sc-sub">Kishanganga Power Station, Bandipora</div>
     </div>
-    <div class="stat-trio">
-      <div class="stat-c"><div class="stat-n">8th</div><div class="stat-l">Semester</div></div>
-      <div class="stat-c"><div class="stat-n">2026</div><div class="stat-l">Graduating</div></div>
-      <div class="stat-c"><div class="stat-n">5+</div><div class="stat-l">Qualifications</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">8th</div><div class="stat-l">Semester</div></div>
+      <div class="stat"><div class="stat-n">2026</div><div class="stat-l">Graduating</div></div>
+      <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Qualifications</div></div>
     </div>
+    <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="li-card">
+      <div class="li-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </div>
+      <div>
+        <div class="li-text-label">Connect on</div>
+        <div class="li-text-val">linkedin.com/in/saifulfayaz</div>
+      </div>
+    </a>
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="divider"></div>
 
 <!-- ABOUT -->
-<section class="sec alt" id="about">
+<section class="section stripe" id="about">
   <div class="si">
-    <div class="sec-num">01</div>
-    <div class="sec-ey">Profile</div>
-    <h2 class="sec-h">About <em>Me</em></h2>
-    <div class="about-layout">
+    <div class="s-num">01</div>
+    <div class="s-eyebrow">Profile</div>
+    <h2 class="s-h">About <em>Me</em></h2>
+    <div class="about-grid">
       <div class="about-text">
         <p>I am a final-year Electrical Engineering student at the University of Kashmir, on track to graduate in 2026. My academic journey has been driven by a genuine passion for electrical systems, energy infrastructure, and the principles that power modern society.</p>
         <p>Beyond my core engineering programme, I hold an NCVT-certified COPA diploma from ITI Bandipora — providing practical grounding in computing and IT that meaningfully complements my technical background.</p>
@@ -571,55 +726,76 @@ h1         {animation:fadeUp .5s .08s both}
       </div>
       <div class="contact-card">
         <div class="cc-head">Contact Details</div>
-        <div class="cc-item">
-          <div class="cc-ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
-          <div><div class="cc-lbl">Email</div><div class="cc-val"><a href="mailto:saif.ul.fayaz@outlook.com">saif.ul.fayaz@outlook.com</a></div></div>
+        <div class="cc-row">
+          <div class="cc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+          <div>
+            <div class="cc-lbl">Email</div>
+            <div class="cc-val"><a href="mailto:contact@saiful.in">contact@saiful.in</a></div>
+          </div>
         </div>
-        <div class="cc-item">
-          <div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.1 2.82 2 2 0 012.08 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div><div class="cc-lbl">Phone</div><div class="cc-val">+91 78899 51631</div></div>
+        <div class="cc-row">
+          <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.1 2.82 2 2 0 012.08 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div>
+            <div class="cc-lbl">Phone</div>
+            <div class="cc-val">+91 78899 51631</div>
+          </div>
         </div>
-        <div class="cc-item">
-          <div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-          <div><div class="cc-lbl">Location</div><div class="cc-val">Bandipora, J&K — 193502</div></div>
+        <div class="cc-row">
+          <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div>
+            <div class="cc-lbl">Location</div>
+            <div class="cc-val">Bandipora, J&amp;K — 193502</div>
+          </div>
         </div>
-        <div class="cc-item">
-          <div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-          <div><div class="cc-lbl">University</div><div class="cc-val">University of Kashmir</div></div>
+        <div class="cc-row">
+          <div class="cc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div>
+            <div class="cc-lbl">University</div>
+            <div class="cc-val">University of Kashmir</div>
+          </div>
         </div>
+        <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="cc-row">
+          <div class="cc-icon li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div>
+            <div class="cc-lbl">LinkedIn</div>
+            <div class="cc-val"><span style="color:var(--accent)">linkedin.com/in/saifulfayaz</span></div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="divider"></div>
 
 <!-- EDUCATION -->
-<section class="sec main" id="education">
+<section class="section white" id="education">
   <div class="si">
-    <div class="sec-num">02</div>
-    <div class="sec-ey">Academic Background</div>
-    <h2 class="sec-h"><em>Education</em></h2>
-    <div class="edu-board">
-      <div class="edu-block span2">
-        <div class="edu-period">2022 — 2026 · Expected <span class="edu-tag">Ongoing</span></div>
+    <div class="s-num">02</div>
+    <div class="s-eyebrow">Academic Background</div>
+    <h2 class="s-h"><em>Education</em></h2>
+    <div class="edu-grid">
+      <div class="edu-card featured">
+        <div class="edu-period">2022 — 2026 · Expected
+          <span class="edu-badge ongoing">Ongoing</span>
+        </div>
         <div class="edu-title">B.Tech — Electrical Engineering</div>
         <div class="edu-school">University of Kashmir</div>
         <div class="edu-desc">Currently in the 8th and final semester. Coursework covers power systems, electrical machines, circuit theory, control systems, electronics, instrumentation, and electives including restructuring of power systems.</div>
       </div>
-      <div class="edu-block">
-        <div class="edu-period">Diploma <span class="edu-tag">NCVT</span></div>
+      <div class="edu-card">
+        <div class="edu-period">Diploma <span class="edu-badge">NCVT</span></div>
         <div class="edu-title">COPA — Computer Operator &amp; Programming Assistant</div>
         <div class="edu-school">ITI Bandipora · National Council for Vocational Training</div>
         <div class="edu-desc">IT fundamentals, MS Office Suite, basic programming and computer operations — nationally certified.</div>
       </div>
-      <div class="edu-block">
+      <div class="edu-card">
         <div class="edu-period">Higher Secondary</div>
         <div class="edu-title">12th Class</div>
         <div class="edu-school">NM Boys Higher Secondary School, Bandipora</div>
         <div class="edu-desc">Completed higher secondary education, forming the academic foundation for engineering studies.</div>
       </div>
-      <div class="edu-block">
+      <div class="edu-card">
         <div class="edu-period">Secondary</div>
         <div class="edu-title">10th Class</div>
         <div class="edu-school">Faiz-e-Aam Secondary School, Bandipora</div>
@@ -629,30 +805,25 @@ h1         {animation:fadeUp .5s .08s both}
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="divider"></div>
 
 <!-- EXPERIENCE -->
-<section class="sec alt" id="experience">
+<section class="section stripe" id="experience">
   <div class="si">
-    <div class="sec-num">03</div>
-    <div class="sec-ey">Industry Exposure</div>
-    <h2 class="sec-h">Work <em>Experience</em></h2>
-    <div class="exp-wrap">
-      <div class="exp-banner">
-        <div class="exp-logo-col">
-          <div class="nhpc-badge">
-            <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
-              <rect width="76" height="38" fill="#003579"/>
-              <rect y="38" width="76" height="38" fill="#ffffff"/>
-              <text x="38" y="26" font-family="'Arial Black',Arial,sans-serif" font-size="15.5" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing=".5">NHPC</text>
-              <text x="38" y="55.5" font-family="'Arial Black',Arial,sans-serif" font-size="15.5" font-weight="900" fill="#003579" text-anchor="middle" letter-spacing=".5">NHPC</text>
-              <rect x="11" y="60" width="54" height="2.2" rx="1.1" fill="#007a38"/>
-              <text x="38" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#007a38" text-anchor="middle" letter-spacing="2.8">LIMITED</text>
-            </svg>
+    <div class="s-num">03</div>
+    <div class="s-eyebrow">Industry Exposure</div>
+    <h2 class="s-h">Work <em>Experience</em></h2>
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-logo-wrap">
+          <div class="nhpc-mark">
+            <div class="nm-top">NHPC</div>
+            <div class="nm-mid"></div>
+            <div class="nm-bot">LIMITED</div>
           </div>
         </div>
-        <div class="exp-text-col">
-          <div class="exp-kicker">Engineering Internship</div>
+        <div class="exp-meta">
+          <div class="exp-type">Engineering Internship</div>
           <div class="exp-name">Kishanganga Power Station</div>
           <div class="exp-org">NHPC Limited &nbsp;·&nbsp; Bandipora, Jammu &amp; Kashmir</div>
         </div>
@@ -660,31 +831,35 @@ h1         {animation:fadeUp .5s .08s both}
       <div class="exp-body">
         <p>Completed an internship at the Kishanganga Hydroelectric Power Station — a major run-of-river project operated by NHPC Limited, one of India's largest hydropower corporations. Gained comprehensive exposure to utility-grade power generation, high-voltage substation infrastructure, and the systems coordinating power evacuation to the national grid. This experience translated four years of engineering coursework into a practical understanding of large-scale energy infrastructure.</p>
         <div class="tags">
-          <span class="tag">Hydropower</span><span class="tag">NHPC Limited</span>
-          <span class="tag">Power Generation</span><span class="tag">HV Substations</span>
-          <span class="tag">Power Evacuation</span><span class="tag">Grid Operations</span>
-          <span class="tag">Electrical Engineering</span><span class="tag">Utility Infrastructure</span>
+          <span class="tag">Hydropower</span>
+          <span class="tag">NHPC Limited</span>
+          <span class="tag">Power Generation</span>
+          <span class="tag">HV Substations</span>
+          <span class="tag">Power Evacuation</span>
+          <span class="tag">Grid Operations</span>
+          <span class="tag">Electrical Engineering</span>
+          <span class="tag">Utility Infrastructure</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="divider"></div>
 
 <!-- SKILLS -->
-<section class="sec main" id="skills">
+<section class="section white" id="skills">
   <div class="si">
-    <div class="sec-num">04</div>
-    <div class="sec-ey">Capabilities</div>
-    <h2 class="sec-h">Skills &amp; <em>Expertise</em></h2>
+    <div class="s-num">04</div>
+    <div class="s-eyebrow">Capabilities</div>
+    <h2 class="s-h">Skills &amp; <em>Expertise</em></h2>
     <div class="sk-grid">
       <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-ico"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="sk-icon"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <div class="sk-name">Power Systems</div>
         </div>
-        <div class="chip-wrap">
+        <div class="chips">
           <span class="chip">Power Generation</span><span class="chip">Power Distribution</span>
           <span class="chip">Hydroelectric Systems</span><span class="chip">Market Restructuring</span>
           <span class="chip">Load Flow Analysis</span><span class="chip">Grid Operations</span>
@@ -692,10 +867,10 @@ h1         {animation:fadeUp .5s .08s both}
       </div>
       <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+          <div class="sk-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
           <div class="sk-name">Electrical Engineering</div>
         </div>
-        <div class="chip-wrap">
+        <div class="chips">
           <span class="chip">Circuit Theory</span><span class="chip">Electrical Machines</span>
           <span class="chip">Control Systems</span><span class="chip">Electronics</span>
           <span class="chip">Instrumentation</span><span class="chip">High Voltage Systems</span>
@@ -703,10 +878,10 @@ h1         {animation:fadeUp .5s .08s both}
       </div>
       <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="sk-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
           <div class="sk-name">Computing &amp; IT</div>
         </div>
-        <div class="chip-wrap">
+        <div class="chips">
           <span class="chip">MS Office Suite</span><span class="chip">Computer Operations</span>
           <span class="chip">Basic Programming</span><span class="chip">Data Management</span>
           <span class="chip">IT Fundamentals</span>
@@ -714,10 +889,10 @@ h1         {animation:fadeUp .5s .08s both}
       </div>
       <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="sk-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
           <div class="sk-name">Soft Skills</div>
         </div>
-        <div class="chip-wrap">
+        <div class="chips">
           <span class="chip">Analytical Thinking</span><span class="chip">Problem Solving</span>
           <span class="chip">Team Collaboration</span><span class="chip">Communication</span>
           <span class="chip">Adaptability</span>
@@ -725,20 +900,20 @@ h1         {animation:fadeUp .5s .08s both}
       </div>
       <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <div class="sk-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
           <div class="sk-name">Languages</div>
         </div>
-        <div class="chip-wrap">
+        <div class="chips">
           <span class="chip">English</span><span class="chip">Urdu</span>
           <span class="chip">Kashmiri</span><span class="chip">Hindi</span>
         </div>
       </div>
       <div class="sk-card">
         <div class="sk-head">
-          <div class="sk-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="sk-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="sk-name">Industry Knowledge</div>
         </div>
-        <div class="chip-wrap">
+        <div class="chips">
           <span class="chip">Utility Operations</span><span class="chip">Renewable Energy</span>
           <span class="chip">NHPC Procedures</span><span class="chip">Safety Protocols</span>
           <span class="chip">Technical Reporting</span>
@@ -750,10 +925,37 @@ h1         {animation:fadeUp .5s .08s both}
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft">
-    <div class="ft-brand">Saif Ul Fayaz</div>
-    <div class="ft-mid">Bandipora, Jammu &amp; Kashmir · 193502</div>
-    <div class="ft-r">saif.ul.fayaz@outlook.com · +91 78899 51631</div>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <div class="ft-brand-name">Saif Ul <em>Fayaz</em></div>
+        <div class="ft-tagline">Electrical Engineer · Bandipora, Jammu &amp; Kashmir · 193502</div>
+      </div>
+      <div class="ft-nav">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+      </div>
+      <div class="ft-contact-col">
+        <div class="ft-contact-item">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          <a href="mailto:contact@saiful.in">contact@saiful.in</a>
+        </div>
+        <div class="ft-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.1 2.82 2 2 0 012.08 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+917889951631">+91 78899 51631</a>
+        </div>
+        <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="ft-li-row">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© 2026 Saif Ul Fayaz. All rights reserved.</div>
+      <div class="ft-copy">Built with care · Graduating 2026</div>
+    </div>
   </div>
 </footer>
 
