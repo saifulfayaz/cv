@@ -2,619 +2,777 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Saif Ul Fayaz — Electrical Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 
 :root{
-  --ink:     #0f1923;
-  --ink2:    #1e2d3d;
-  --ink3:    #354d63;
-  --muted:   #6b7f91;
-  --faint:   #9eafc0;
-  --line:    #dde4ea;
-  --line2:   #edf1f5;
-
-  --bg:      #ffffff;
-  --bg2:     #f8f9fb;
-  --bg3:     #f1f4f8;
-  --card:    #ffffff;
-
-  --accent:  #1a56db;
-  --accent2: #2d6af5;
-  --accent3: #e8effe;
-
-  --teal:    #0e9688;
-  --teal2:   #e0f5f3;
-
-  --amber:   #d97706;
-  --amber2:  #fef3c7;
-  --amber3:  #fbbf24;
-
-  --radius:  10px;
-  --shadow:  0 1px 4px rgba(15,25,35,.06), 0 4px 16px rgba(15,25,35,.07);
-  --shadow2: 0 2px 8px rgba(15,25,35,.08), 0 12px 40px rgba(15,25,35,.10);
+  /* Palette */
+  --cream:    #faf8f4;
+  --cream2:   #f4f0e8;
+  --cream3:   #ede8dc;
+  --white:    #ffffff;
+  --ink:      #0d1117;
+  --ink2:     #1a2332;
+  --ink3:     #2d3f55;
+  --slate:    #4a5d72;
+  --muted:    #7a8fa6;
+  --faint:    #b0bfcc;
+  --line:     #e2ddd4;
+  --line2:    #ede9e0;
+  /* Accent — refined navy-blue */
+  --blue:     #1c4ed8;
+  --blue2:    #2563eb;
+  --blue3:    #3b82f6;
+  --bluebg:   #eff6ff;
+  --bluebdr:  rgba(28,78,216,.18);
+  /* Warm gold for highlights */
+  --gold:     #b45309;
+  --goldbg:   #fffbeb;
+  --goldbdr:  rgba(180,83,9,.15);
+  /* Teal accent */
+  --teal:     #0d7a6e;
+  --tealbg:   #f0fdfa;
+  /* Shadows */
+  --sh1: 0 1px 3px rgba(13,17,23,.06), 0 4px 12px rgba(13,17,23,.06);
+  --sh2: 0 2px 8px rgba(13,17,23,.08), 0 12px 32px rgba(13,17,23,.10);
+  --sh3: 0 4px 16px rgba(13,17,23,.10), 0 24px 48px rgba(13,17,23,.12);
 }
 
 body{
-  font-family:'Outfit',sans-serif;
-  background:var(--bg);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--white);
   color:var(--ink);
-  line-height:1.6;
+  line-height:1.65;
   overflow-x:hidden;
 }
-::selection{background:#bfdbfe;color:var(--ink)}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+::selection{background:#dbeafe;color:var(--blue)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--blue3);border-radius:4px}
 
-/* ─────────────────────────────
+/* ══════════════════════════
    NAV
-───────────────────────────── */
+══════════════════════════ */
 nav{
   position:fixed;inset:0 0 auto;z-index:999;
-  height:64px;
+  height:66px;
   display:flex;align-items:center;
-  padding:0 clamp(1.5rem,5vw,5rem);
-  gap:2rem;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--line);
+  padding:0 clamp(1.25rem,4vw,4rem);
+  gap:1.5rem;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--line2);
+  box-shadow:0 1px 0 var(--line2), 0 4px 16px rgba(13,17,23,.04);
 }
 .n-brand{
-  display:flex;align-items:center;gap:.7rem;
+  display:flex;align-items:center;gap:.65rem;
   text-decoration:none;flex-shrink:0;
 }
-.n-monogram{
-  width:36px;height:36px;border-radius:8px;
+.n-avatar{
+  width:38px;height:38px;border-radius:10px;
   background:var(--ink);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  box-shadow:0 2px 8px rgba(13,17,23,.2);
 }
-.n-monogram svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round}
+.n-avatar span{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-weight:700;
+  color:#fff;line-height:1;
+}
+.n-text{display:flex;flex-direction:column;line-height:1.2}
 .n-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;font-weight:600;
+  font-family:'Playfair Display',serif;
+  font-size:.92rem;font-weight:700;
   color:var(--ink);letter-spacing:.01em;
 }
-.n-name em{font-style:italic;color:var(--accent)}
-.n-links{display:flex;gap:clamp(.5rem,2vw,2rem);list-style:none;margin-left:auto;align-items:center}
+.n-title{font-size:.6rem;font-weight:500;color:var(--muted);letter-spacing:.06em}
+.n-links{display:flex;gap:clamp(.4rem,1.5vw,1.8rem);list-style:none;margin-left:auto;align-items:center}
 .n-links a{
-  font-size:.72rem;font-weight:500;letter-spacing:.06em;
-  color:var(--muted);text-decoration:none;transition:color .18s;
+  font-size:.72rem;font-weight:600;letter-spacing:.04em;
+  color:var(--slate);text-decoration:none;transition:color .18s;
+  white-space:nowrap;
 }
 .n-links a:hover{color:var(--ink)}
-.n-li{
+.n-actions{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+.n-li-btn{
   display:flex;align-items:center;gap:.38rem;
+  padding:.34rem .85rem;
+  border:1.5px solid var(--bluebdr);
+  border-radius:7px;
   text-decoration:none;
-  font-size:.72rem;font-weight:600;
-  color:var(--accent);
-  padding:.3rem .8rem;
-  border:1.5px solid rgba(26,86,219,.25);
-  border-radius:6px;
-  transition:all .18s;
-  flex-shrink:0;
+  font-size:.68rem;font-weight:600;
+  color:var(--blue);
+  transition:all .18s;white-space:nowrap;
 }
-.n-li:hover{background:var(--accent3);border-color:var(--accent)}
-.n-li svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
-.n-cta{
-  flex-shrink:0;
-  display:inline-flex;align-items:center;
-  padding:.38rem 1.15rem;
+.n-li-btn:hover{background:var(--bluebg);border-color:var(--blue3)}
+.n-li-btn svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
+.n-resume{
+  display:flex;align-items:center;gap:.38rem;
+  padding:.36rem 1rem;
   background:var(--ink);color:#fff;
-  font-size:.72rem;font-weight:600;letter-spacing:.04em;
-  border-radius:6px;text-decoration:none;
-  transition:all .18s;
+  border-radius:7px;text-decoration:none;
+  font-size:.68rem;font-weight:600;letter-spacing:.03em;
+  transition:all .2s;white-space:nowrap;
+  box-shadow:0 2px 8px rgba(13,17,23,.18);
 }
-.n-cta:hover{background:var(--ink2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(15,25,35,.2)}
-.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;margin-left:auto}
+.n-resume:hover{background:var(--ink2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(13,17,23,.24)}
+.n-resume svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;margin-left:auto;flex-shrink:0}
 .ham span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:1px;transition:.25s}
 .ham.o span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .ham.o span:nth-child(2){opacity:0}
 .ham.o span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 .mob{
-  display:none;position:fixed;top:64px;inset-x:0;z-index:998;
-  background:rgba(255,255,255,.98);backdrop-filter:blur(20px);
+  display:none;position:fixed;top:66px;inset-x:0;z-index:998;
+  background:rgba(255,255,255,.98);backdrop-filter:blur(24px);
   border-bottom:1px solid var(--line);
-  flex-direction:column;padding:1rem clamp(1.5rem,5vw,5rem) 1.5rem;
+  flex-direction:column;
+  padding:1rem clamp(1.25rem,4vw,4rem) 1.5rem;
+  gap:.1rem;
 }
 .mob.o{display:flex}
 .mob a{
-  font-size:.78rem;font-weight:500;
-  color:var(--muted);text-decoration:none;
-  padding:.65rem 0;border-bottom:1px solid var(--line2);transition:color .18s;
+  font-size:.78rem;font-weight:500;color:var(--slate);
+  text-decoration:none;padding:.65rem 0;
+  border-bottom:1px solid var(--line2);transition:color .18s;
 }
 .mob a:last-child{border:none}
-.mob a:hover{color:var(--ink)}
+.mob a:hover{color:var(--blue)}
 
-/* ─────────────────────────────
-   HERO
-───────────────────────────── */
+/* ══════════════════════════
+   HERO — MAGAZINE SPLIT
+══════════════════════════ */
 .hero{
-  min-height:100vh;
+  min-height:100svh;
   display:grid;
-  grid-template-columns:1fr 380px;
-  padding-top:64px;
+  grid-template-columns:1fr 420px;
+  padding-top:66px;
 }
-.hero-left{
+/* left: cream textured panel */
+.hero-l{
+  background:var(--cream);
   display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(4rem,10vh,8rem) clamp(1.5rem,5vw,5rem);
-  background:var(--bg);
-  border-right:1px solid var(--line);
+  padding:clamp(3.5rem,8vh,7rem) clamp(1.5rem,5vw,5rem);
   position:relative;overflow:hidden;
+  border-right:1px solid var(--line);
 }
-/* subtle geometric pattern */
-.hero-left::before{
+/* Decorative circle rings */
+.hero-l::before{
   content:'';position:absolute;
-  right:-80px;bottom:-80px;
-  width:320px;height:320px;
-  border-radius:50%;
-  border:40px solid var(--line2);
-  pointer-events:none;
+  right:-120px;top:50%;transform:translateY(-50%);
+  width:340px;height:340px;border-radius:50%;
+  border:1px solid var(--line);pointer-events:none;
 }
-.hero-left::after{
+.hero-l::after{
   content:'';position:absolute;
-  right:60px;bottom:60px;
-  width:180px;height:180px;
-  border-radius:50%;
-  border:2px dashed var(--line);
-  pointer-events:none;
+  right:-60px;top:50%;transform:translateY(-50%);
+  width:200px;height:200px;border-radius:50%;
+  border:1px solid var(--line2);pointer-events:none;
+}
+/* right: white info panel */
+.hero-r{
+  background:var(--white);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(3.5rem,8vh,7rem) 2.5rem;
+  gap:1rem;
 }
 
-.hero-eyebrow{
+.h-kicker{
   display:inline-flex;align-items:center;gap:.55rem;
-  background:var(--accent3);
-  border:1px solid rgba(26,86,219,.18);
-  border-radius:100px;
-  padding:.3rem .9rem .3rem .55rem;
-  font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:2rem;align-self:flex-start;
+  font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:1.8rem;align-self:flex-start;
 }
-.eye-dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--accent);
-  animation:pulse 2.2s ease infinite;
+.h-kicker::before{content:'';width:28px;height:2px;background:var(--blue);border-radius:1px}
+.h-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--blue3);flex-shrink:0;
+  animation:blink 2s ease infinite;
 }
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.55)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 
 h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,5.8vw,6rem);
-  font-weight:700;line-height:.95;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,5.2vw,5.6rem);
+  font-weight:900;line-height:.95;
   color:var(--ink);
-  letter-spacing:-.02em;
-  margin-bottom:1.5rem;
-  white-space:nowrap;
+  letter-spacing:-.025em;
+  margin-bottom:1.4rem;
 }
 h1 em{
   font-style:italic;font-weight:400;
-  color:var(--accent);
+  color:var(--blue2);display:block;
 }
 
-.hero-role{
+.h-role{
   display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
-  font-size:.88rem;font-weight:400;
+  font-size:.85rem;font-weight:500;
   color:var(--muted);
-  margin-bottom:1.6rem;
+  margin-bottom:1.4rem;
 }
-.hero-role strong{color:var(--ink2);font-weight:600}
-.rdot{width:4px;height:4px;border-radius:50%;background:var(--line);flex-shrink:0}
+.h-role b{color:var(--ink2);font-weight:600}
+.sep{color:var(--line);font-weight:300;font-size:1rem}
 
-.hero-bio{
-  font-size:.95rem;line-height:1.9;
-  color:var(--muted);
-  max-width:500px;margin-bottom:2.5rem;
+.h-bio{
+  font-size:.9rem;line-height:1.95;
+  color:var(--slate);
+  max-width:480px;margin-bottom:2.4rem;font-weight:400;
 }
 
-.btn-row{display:flex;gap:.65rem;flex-wrap:wrap}
+.h-btns{display:flex;gap:.65rem;flex-wrap:wrap}
 .btn{
-  display:inline-flex;align-items:center;gap:.42rem;
-  padding:.7rem 1.5rem;
-  font-family:'Outfit',sans-serif;
-  font-size:.72rem;font-weight:600;letter-spacing:.04em;
-  border-radius:7px;text-decoration:none;transition:all .2s;cursor:pointer;border:none;
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.68rem 1.5rem;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.7rem;font-weight:700;letter-spacing:.04em;
+  border-radius:8px;text-decoration:none;
+  transition:all .2s;cursor:pointer;border:none;
+  white-space:nowrap;
 }
 .btn-primary{
-  background:var(--ink);color:#fff;
-  box-shadow:0 2px 8px rgba(15,25,35,.18);
+  background:var(--blue2);color:#fff;
+  box-shadow:0 2px 10px rgba(28,78,216,.25);
 }
-.btn-primary:hover{background:var(--ink2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,25,35,.22)}
-.btn-ghost{
-  background:var(--bg);color:var(--ink2);
+.btn-primary:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 6px 20px rgba(28,78,216,.35)}
+.btn-secondary{
+  background:var(--white);color:var(--ink2);
   border:1.5px solid var(--line);
+  box-shadow:var(--sh1);
 }
-.btn-ghost:hover{border-color:var(--ink3);background:var(--bg2);transform:translateY(-2px)}
-.btn-linkedin{
-  background:var(--accent3);color:var(--accent);
-  border:1.5px solid rgba(26,86,219,.2);
+.btn-secondary:hover{border-color:var(--faint);background:var(--cream);transform:translateY(-2px)}
+.btn-resume{
+  background:var(--goldbg);color:var(--gold);
+  border:1.5px solid var(--goldbdr);
 }
-.btn-linkedin:hover{background:#dbeafe;border-color:var(--accent);transform:translateY(-2px)}
-.btn-linkedin svg,.btn-li svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+.btn-resume:hover{background:#fef3c7;border-color:rgba(180,83,9,.3);transform:translateY(-2px)}
+.btn-resume svg,.n-resume svg,.dl-svg{width:13px;height:13px;flex-shrink:0}
+.btn-resume svg{stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-li{
+  background:var(--bluebg);color:var(--blue2);
+  border:1.5px solid var(--bluebdr);
+}
+.btn-li:hover{background:#dbeafe;border-color:var(--blue3);transform:translateY(-2px)}
+.btn-li svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
 
-/* right sidebar */
-.hero-right{
-  background:var(--bg2);
-  display:flex;flex-direction:column;
-  padding:clamp(4rem,10vh,8rem) 2rem clamp(4rem,10vh,7rem);
-  gap:.9rem;
+/* right sidebar cards */
+.sb-label{
+  font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);padding-bottom:.8rem;border-bottom:1px solid var(--line2);
 }
-.sidebar-label{
-  font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--faint);margin-bottom:.1rem;
-  padding-bottom:.75rem;border-bottom:1px solid var(--line);
-}
-
-.sc{
-  background:var(--card);
+.scard{
+  background:var(--white);
   border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:1.1rem 1.25rem;
+  border-radius:12px;
+  padding:1.15rem 1.3rem;
+  box-shadow:var(--sh1);
   transition:box-shadow .2s,transform .2s;
-  position:relative;
+  position:relative;overflow:hidden;
 }
-.sc:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-.sc-label{font-size:.55rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.28rem}
-.sc-val{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);line-height:1.2}
-.sc-sub{font-size:.72rem;color:var(--muted);margin-top:.18rem}
-.sc-bar{
-  position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:var(--accent);border-radius:var(--radius) 0 0 var(--radius);
+.scard::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  border-radius:12px 0 0 12px;
 }
+.scard.blue::before{background:var(--blue2)}
+.scard.teal::before{background:var(--teal)}
+.scard.gold::before{background:var(--gold)}
+.scard:hover{box-shadow:var(--sh2);transform:translateY(-2px)}
+.sc-lbl{font-size:.54rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.28rem}
+.sc-val{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.2;
+}
+.sc-sub{font-size:.7rem;color:var(--muted);margin-top:.16rem;font-weight:500}
 
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
-.stat{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:.9rem .5rem;text-align:center;
-  transition:box-shadow .2s,transform .2s;
-}
-.stat:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-.stat-n{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.8rem;font-weight:700;color:var(--ink);line-height:1;
-}
-.stat-l{font-size:.55rem;font-weight:600;letter-spacing:.06em;color:var(--muted);margin-top:.25rem;text-transform:uppercase}
-
-.li-card{
-  background:var(--card);border:1.5px solid rgba(26,86,219,.2);
-  border-radius:var(--radius);
-  padding:1rem 1.25rem;
-  display:flex;align-items:center;gap:.8rem;
-  text-decoration:none;
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.stat-box{
+  background:var(--cream);border:1px solid var(--line);
+  border-radius:10px;padding:.9rem .5rem;text-align:center;
   transition:all .2s;
 }
-.li-card:hover{background:var(--accent3);border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-2px)}
-.li-icon{
-  width:36px;height:36px;border-radius:7px;
-  background:#0a66c2;flex-shrink:0;
+.stat-box:hover{background:var(--white);box-shadow:var(--sh1);transform:translateY(-2px)}
+.stat-n{
+  font-family:'Playfair Display',serif;
+  font-size:1.65rem;font-weight:700;color:var(--ink);line-height:1;
+}
+.stat-l{font-size:.53rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:.28rem}
+
+.li-cta{
+  display:flex;align-items:center;gap:.85rem;
+  background:var(--bluebg);border:1.5px solid var(--bluebdr);
+  border-radius:12px;padding:1.05rem 1.3rem;
+  text-decoration:none;transition:all .2s;
+}
+.li-cta:hover{background:#dbeafe;border-color:var(--blue3);box-shadow:var(--sh1);transform:translateY(-2px)}
+.li-logo{
+  width:36px;height:36px;border-radius:8px;background:#0a66c2;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(10,102,194,.25);
 }
-.li-icon svg{width:18px;height:18px;fill:#fff}
-.li-text-label{font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.15rem}
-.li-text-val{font-size:.8rem;font-weight:600;color:var(--accent)}
+.li-logo svg{width:18px;height:18px;fill:#fff}
+.li-info-lbl{font-size:.53rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.15rem}
+.li-info-val{font-size:.78rem;font-weight:600;color:var(--blue2)}
 
-/* ─────────────────────────────
-   SECTION CHROME
-───────────────────────────── */
-.section{padding:clamp(4rem,8vh,7rem) clamp(1.5rem,5vw,5rem)}
-.section.stripe{background:var(--bg2)}
-.section.white{background:var(--bg)}
-.si{max-width:1160px;margin:0 auto}
+.resume-cta{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--goldbg);border:1.5px solid var(--goldbdr);
+  border-radius:12px;padding:1.05rem 1.3rem;
+  text-decoration:none;transition:all .2s;
+}
+.resume-cta:hover{background:#fef3c7;border-color:rgba(180,83,9,.28);box-shadow:var(--sh1);transform:translateY(-2px)}
+.rc-left{display:flex;align-items:center;gap:.85rem}
+.rc-icon{
+  width:36px;height:36px;border-radius:8px;background:var(--gold);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(180,83,9,.25);
+}
+.rc-icon svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.rc-lbl{font-size:.53rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.15rem}
+.rc-val{font-size:.78rem;font-weight:600;color:var(--gold)}
+.rc-arrow{
+  width:28px;height:28px;border-radius:7px;
+  background:rgba(180,83,9,.1);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.rc-arrow svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
-.s-eyebrow{
-  display:flex;align-items:center;gap:.55rem;
-  font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:.65rem;
-}
-.s-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:1px}
-.s-num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:4.5rem;font-weight:700;
-  color:var(--line2);
-  line-height:1;margin-bottom:-.35rem;
-  letter-spacing:-.04em;user-select:none;
-}
-.s-h{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.2rem,3.8vw,3.4rem);
-  font-weight:600;color:var(--ink);line-height:1.05;
-  margin-bottom:clamp(2rem,5vh,3.5rem);
-}
-.s-h em{font-style:italic;font-weight:400;color:var(--accent)}
-.divider{height:1px;background:var(--line)}
+/* ══════════════════════════
+   SECTION BASE
+══════════════════════════ */
+.sec{padding:clamp(4rem,8vh,7rem) clamp(1.25rem,4vw,5rem)}
+.sec.bg-cream{background:var(--cream)}
+.sec.bg-white{background:var(--white)}
+.si{max-width:1180px;margin:0 auto}
 
-/* ─────────────────────────────
-   ABOUT
-───────────────────────────── */
-.about-grid{
-  display:grid;grid-template-columns:1fr 280px;
-  gap:clamp(2.5rem,5vw,5rem);align-items:start;
+.s-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:.7rem;
 }
-.about-text p{
-  font-size:.93rem;line-height:1.9;
-  color:var(--muted);margin-bottom:1.1rem;
+.s-tag::before{content:'';width:22px;height:2px;background:var(--blue);border-radius:1px}
+.sec-ghost{
+  font-family:'Playfair Display',serif;
+  font-size:6rem;font-weight:900;
+  color:transparent;
+  -webkit-text-stroke:1px var(--line2);
+  line-height:1;margin-bottom:-.5rem;
+  letter-spacing:-.05em;user-select:none;
 }
-.about-text p:last-child{margin-bottom:0}
+h2.sec-h{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3.2rem);
+  font-weight:700;color:var(--ink);line-height:1.05;
+  margin-bottom:clamp(2.5rem,5vh,4rem);
+}
+h2.sec-h em{font-style:italic;font-weight:400;color:var(--blue2)}
+.divider{height:1px;background:var(--line2)}
 
-.contact-card{
-  background:var(--bg);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
+/* ══════════════════════════
+   ABOUT SECTION
+══════════════════════════ */
+.about-wrap{display:grid;grid-template-columns:1fr 300px;gap:clamp(2.5rem,5vw,5rem);align-items:start}
+.about-body p{font-size:.91rem;line-height:1.95;color:var(--slate);margin-bottom:1.1rem;font-weight:400}
+.about-body p:last-child{margin-bottom:0}
+.about-body p strong{color:var(--ink2);font-weight:600}
+
+/* contact card */
+.ccard{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;
+  box-shadow:var(--sh1);
 }
-.cc-head{
-  padding:.8rem 1.2rem;
-  background:var(--bg3);
+.ccard-head{
+  padding:.85rem 1.3rem;
+  background:var(--cream2);
   border-bottom:1px solid var(--line);
-  font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
   color:var(--ink3);
   display:flex;align-items:center;gap:.5rem;
 }
-.cc-head::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal)}
-.cc-row{
-  display:flex;align-items:center;gap:.85rem;
-  padding:.85rem 1.2rem;
-  border-bottom:1px solid var(--line2);
-  transition:background .15s;
-  text-decoration:none;
+.ccard-head::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.crow{
+  display:flex;align-items:center;gap:.9rem;
+  padding:.9rem 1.3rem;border-bottom:1px solid var(--line2);
+  transition:background .15s;text-decoration:none;
 }
-.cc-row:last-child{border:none}
-.cc-row:hover{background:var(--bg2)}
-.cc-icon{
-  width:30px;height:30px;border-radius:7px;flex-shrink:0;
+.crow:last-child{border:none}
+.crow:hover{background:var(--cream)}
+.crow-ico{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  background:var(--cream2);border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;
-  background:var(--bg3);
-  border:1px solid var(--line);
 }
-.cc-icon svg{width:13px;height:13px;stroke:var(--ink3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.cc-icon.li{background:#e8f1fb;border-color:#bedaf5}
-.cc-icon.li svg{stroke:none;fill:#0a66c2;width:14px;height:14px}
-.cc-lbl{font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.06rem}
-.cc-val{font-size:.8rem;font-weight:500;color:var(--ink2)}
-.cc-val a{color:var(--ink2);text-decoration:none}
-.cc-val a:hover{color:var(--accent)}
+.crow-ico svg{width:13px;height:13px;stroke:var(--ink3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.crow-ico.li-ico{background:#e8f1fb;border-color:#bedaf5}
+.crow-ico.li-ico svg{stroke:none;fill:#0a66c2;width:14px;height:14px}
+.crow-ico.dl-ico{background:var(--goldbg);border-color:var(--goldbdr)}
+.crow-ico.dl-ico svg{stroke:var(--gold);width:13px;height:13px}
+.crow-lbl{font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:.06rem}
+.crow-val{font-size:.8rem;font-weight:500;color:var(--ink2)}
+.crow-val a{color:var(--ink2);text-decoration:none;transition:color .18s}
+.crow-val a:hover{color:var(--blue)}
+.crow-val a.li-a:hover{color:#0a66c2}
 
-/* ─────────────────────────────
+/* ══════════════════════════
    EDUCATION
-───────────────────────────── */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+══════════════════════════ */
+.edu-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 .edu-card{
-  background:var(--bg);border:1px solid var(--line);
-  border-radius:var(--radius);padding:1.7rem 1.8rem;
-  box-shadow:var(--shadow);
-  transition:box-shadow .2s,transform .2s;
+  background:var(--white);border:1px solid var(--line);
+  border-radius:14px;padding:1.8rem 2rem;
+  box-shadow:var(--sh1);
+  transition:box-shadow .22s,transform .22s;
   position:relative;overflow:hidden;
 }
-.edu-card:hover{box-shadow:var(--shadow2);transform:translateY(-3px)}
-.edu-card.featured{grid-column:1/-1}
-.edu-card.featured::after{
+.edu-card:hover{box-shadow:var(--sh2);transform:translateY(-3px)}
+.edu-card.span2{grid-column:1/-1}
+/* Top accent bar */
+.edu-card.span2::after{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--accent),var(--teal));
+  background:linear-gradient(90deg,var(--blue2),var(--teal));
 }
+.edu-badge-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.55rem;flex-wrap:wrap}
 .edu-period{
-  font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:.45rem;
-  display:flex;align-items:center;gap:.5rem;
+  font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue2);
 }
-.edu-badge{
-  background:var(--accent);color:#fff;
+.edu-tag{
+  background:var(--blue2);color:#fff;
   font-size:.5rem;font-weight:700;
-  padding:.1rem .45rem;border-radius:3px;letter-spacing:.08em;
+  padding:.1rem .5rem;border-radius:4px;letter-spacing:.08em;text-transform:uppercase;
 }
-.edu-badge.ongoing{background:var(--teal)}
+.edu-tag.ongoing{background:var(--teal)}
+.edu-tag.cert{background:var(--gold)}
 .edu-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;font-weight:600;color:var(--ink);
-  line-height:1.25;margin-bottom:.2rem;
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;font-weight:700;color:var(--ink);
+  line-height:1.25;margin-bottom:.22rem;
 }
-.edu-school{font-size:.75rem;color:var(--muted);margin-bottom:.65rem;font-weight:500}
-.edu-desc{font-size:.79rem;line-height:1.8;color:var(--faint)}
+.edu-school{font-size:.74rem;color:var(--muted);margin-bottom:.65rem;font-weight:500}
+.edu-desc{font-size:.79rem;line-height:1.82;color:var(--faint)}
 
-/* ─────────────────────────────
+/* ══════════════════════════
    EXPERIENCE
-───────────────────────────── */
-.exp-card{
-  background:var(--bg);border:1px solid var(--line);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
+══════════════════════════ */
+.exp-wrap{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;
+  box-shadow:var(--sh2);
 }
-.exp-header{
-  display:grid;grid-template-columns:auto 1fr;
-  background:var(--bg2);
+.exp-top{
+  display:grid;grid-template-columns:160px 1fr;
+  background:var(--cream);
   border-bottom:1px solid var(--line);
-  position:relative;
+  position:relative;overflow:hidden;
 }
-.exp-header::after{
+.exp-top::before{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--accent),var(--teal));
+  background:linear-gradient(90deg,var(--blue2) 0%,var(--teal) 55%,transparent 100%);
 }
-.exp-logo-wrap{
-  padding:1.8rem 1.5rem 1.8rem 2rem;
-  border-right:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
+/* Subtle background pattern on header */
+.exp-top::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 100% at 0% 50%, rgba(28,78,216,.03), transparent 60%);
+  pointer-events:none;
 }
-/* Clean NHPC text-based badge — no dodgy SVG logos */
-.nhpc-mark{
-  width:80px;height:80px;border-radius:10px;
-  background:#003579;
+.exp-badge-col{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:2px;
-  box-shadow:0 4px 16px rgba(0,53,121,.22);
+  gap:.75rem;
+  padding:2rem 1.5rem;
+  border-right:1px solid var(--line);
+  position:relative;z-index:1;
 }
-.nhpc-mark .nm-top{
-  font-family:'Outfit',sans-serif;
-  font-size:1.1rem;font-weight:700;
+/* NHPC badge — clean typographic */
+.nhpc-badge{
+  width:88px;height:88px;border-radius:13px;
+  background:var(--ink2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:5px;
+  box-shadow:0 4px 18px rgba(13,17,23,.2), 0 0 0 1px rgba(255,255,255,.06);
+}
+.nhpc-badge .nb-name{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:1.15rem;font-weight:800;
   color:#fff;letter-spacing:.06em;line-height:1;
 }
-.nhpc-mark .nm-mid{
-  width:44px;height:2px;background:#007a38;border-radius:1px;
+.nhpc-badge .nb-rule{
+  width:46px;height:2.5px;border-radius:2px;
+  background:linear-gradient(90deg,#1c4ed8,#0d7a6e);
 }
-.nhpc-mark .nm-bot{
-  font-family:'Outfit',sans-serif;
-  font-size:.38rem;font-weight:600;
-  color:#d0e8ff;letter-spacing:.18em;line-height:1;
+.nhpc-badge .nb-sub{
+  font-size:.38rem;font-weight:700;letter-spacing:.25em;
+  color:rgba(255,255,255,.45);text-transform:uppercase;
 }
-.exp-meta{padding:1.8rem 2rem}
-.exp-type{
-  font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:.35rem;
+.exp-type-tag{
+  display:inline-flex;
+  background:var(--bluebg);border:1px solid var(--bluebdr);
+  border-radius:5px;
+  font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue);padding:.18rem .55rem;
+}
+.exp-info-col{padding:2rem 2.5rem;position:relative;z-index:1}
+.exp-org-label{
+  font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:.4rem;
   display:flex;align-items:center;gap:.45rem;
 }
-.exp-type::before{content:'';width:12px;height:1.5px;background:var(--accent);border-radius:1px}
-.exp-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.6rem;font-weight:600;color:var(--ink);
-  line-height:1.15;margin-bottom:.22rem;
+.exp-org-label::before{content:'';width:14px;height:1.5px;background:var(--blue);border-radius:1px}
+.exp-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.7rem;font-weight:700;color:var(--ink);
+  line-height:1.1;margin-bottom:.3rem;
 }
-.exp-org{font-size:.78rem;color:var(--muted);font-weight:500}
-.exp-body{padding:1.8rem 2rem 2rem}
-.exp-body p{font-size:.9rem;line-height:1.9;color:var(--muted);margin-bottom:1.5rem}
+.exp-org{font-size:.8rem;color:var(--muted);font-weight:500;margin-bottom:.6rem}
+.exp-dates{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--cream2);border:1px solid var(--line);
+  border-radius:5px;padding:.2rem .65rem;
+  font-size:.62rem;font-weight:600;color:var(--slate);
+}
+.exp-dates::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.exp-body{padding:2rem 2.5rem}
+.exp-body p{font-size:.9rem;line-height:1.95;color:var(--slate);margin-bottom:1.6rem}
+
+/* highlights row */
+.exp-highlights{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line2);
+  border:1px solid var(--line2);border-radius:10px;overflow:hidden;
+  margin-bottom:1.6rem;
+}
+.exp-hl{
+  background:var(--cream);padding:.85rem 1rem;
+  display:flex;align-items:flex-start;gap:.6rem;
+  transition:background .15s;
+}
+.exp-hl:hover{background:var(--white)}
+.hl-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--blue2);flex-shrink:0;margin-top:.35rem;
+}
+.hl-text{font-size:.74rem;line-height:1.5;color:var(--slate);font-weight:500}
+
 .tags{display:flex;flex-wrap:wrap;gap:.4rem}
 .tag{
-  background:var(--bg3);border:1px solid var(--line);
-  color:var(--ink3);font-size:.66rem;font-weight:500;
-  padding:.22rem .75rem;border-radius:100px;
+  background:var(--cream);border:1px solid var(--line);
+  color:var(--slate);font-size:.67rem;font-weight:500;
+  padding:.24rem .75rem;border-radius:100px;
   transition:all .15s;
 }
-.tag:hover{background:var(--accent3);border-color:rgba(26,86,219,.25);color:var(--accent)}
+.tag:hover{background:var(--bluebg);border-color:var(--bluebdr);color:var(--blue)}
 
-/* ─────────────────────────────
+/* ══════════════════════════
    SKILLS
-───────────────────────────── */
-.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+══════════════════════════ */
+.sk-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .sk-card{
-  background:var(--bg);border:1px solid var(--line);
-  border-radius:var(--radius);padding:1.5rem 1.6rem;
-  box-shadow:var(--shadow);
-  transition:box-shadow .2s,transform .2s;
+  background:var(--white);border:1px solid var(--line);
+  border-radius:14px;padding:1.6rem 1.7rem;
+  box-shadow:var(--sh1);transition:box-shadow .22s,transform .22s;
   position:relative;overflow:hidden;
 }
-.sk-card:hover{box-shadow:var(--shadow2);transform:translateY(-3px)}
-.sk-card::before{
+.sk-card:hover{box-shadow:var(--sh2);transform:translateY(-3px)}
+.sk-card::after{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--accent),transparent 70%);
+  background:linear-gradient(90deg,var(--blue2),transparent 70%);
   opacity:0;transition:opacity .25s;
 }
-.sk-card:hover::before{opacity:1}
-.sk-head{
-  display:flex;align-items:center;gap:.6rem;
-  margin-bottom:.9rem;padding-bottom:.85rem;
+.sk-card:hover::after{opacity:1}
+.sk-hd{
+  display:flex;align-items:center;gap:.65rem;
+  margin-bottom:1rem;padding-bottom:.9rem;
   border-bottom:1px solid var(--line2);
 }
-.sk-icon{
-  width:32px;height:32px;border-radius:7px;flex-shrink:0;
-  background:var(--bg3);border:1px solid var(--line);
+.sk-ico{
+  width:34px;height:34px;border-radius:9px;flex-shrink:0;
+  background:var(--cream2);border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;
 }
-.sk-icon svg{width:14px;height:14px;stroke:var(--ink3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.sk-name{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.sk-ico svg{width:15px;height:15px;stroke:var(--ink2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sk-nm{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
 .chips{display:flex;flex-wrap:wrap;gap:.35rem}
 .chip{
-  background:var(--bg2);border:1px solid var(--line);
-  color:var(--ink3);font-size:.7rem;font-weight:400;
-  padding:.22rem .6rem;border-radius:5px;
-  transition:all .15s;
+  background:var(--cream);border:1px solid var(--line);
+  color:var(--slate);font-size:.7rem;font-weight:500;
+  padding:.24rem .62rem;border-radius:6px;transition:all .15s;
 }
-.chip:hover{background:var(--accent3);border-color:rgba(26,86,219,.2);color:var(--accent)}
+.chip:hover{background:var(--bluebg);border-color:var(--bluebdr);color:var(--blue)}
 
-/* ─────────────────────────────
-   FOOTER
-───────────────────────────── */
-footer{
+/* ══════════════════════════
+   RESUME DOWNLOAD BANNER
+══════════════════════════ */
+.resume-banner{
   background:var(--ink);
-  padding:3rem clamp(1.5rem,5vw,5rem) 2.5rem;
+  padding:clamp(3rem,5vh,4.5rem) clamp(1.25rem,4vw,5rem);
 }
-.ft-inner{max-width:1160px;margin:0 auto}
+.rb-inner{
+  max-width:1180px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;
+}
+.rb-text-label{
+  font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin-bottom:.5rem;
+}
+.rb-headline{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,3vw,2.4rem);
+  font-weight:700;color:#fff;line-height:1.1;
+}
+.rb-headline em{font-style:italic;font-weight:400;color:rgba(255,255,255,.5)}
+.rb-sub{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.5rem;font-weight:400}
+.rb-actions{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}
+.btn-dl{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.78rem 1.8rem;
+  background:var(--gold);color:#fff;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.04em;
+  border-radius:9px;text-decoration:none;
+  transition:all .2s;
+  box-shadow:0 4px 16px rgba(180,83,9,.35);
+  white-space:nowrap;
+}
+.btn-dl:hover{background:#a04008;transform:translateY(-2px);box-shadow:0 8px 24px rgba(180,83,9,.45)}
+.btn-dl svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.btn-li-w{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.78rem 1.5rem;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);
+  border:1.5px solid rgba(255,255,255,.12);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.72rem;font-weight:600;letter-spacing:.04em;
+  border-radius:9px;text-decoration:none;
+  transition:all .2s;white-space:nowrap;
+}
+.btn-li-w:hover{background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.25);transform:translateY(-2px)}
+.btn-li-w svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
+.btn-email-w{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.78rem 1.5rem;
+  background:rgba(28,78,216,.2);color:#93c5fd;
+  border:1.5px solid rgba(28,78,216,.3);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.72rem;font-weight:600;letter-spacing:.04em;
+  border-radius:9px;text-decoration:none;
+  transition:all .2s;white-space:nowrap;
+}
+.btn-email-w:hover{background:rgba(28,78,216,.35);color:#bfdbfe;transform:translateY(-2px)}
+.btn-email-w svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+footer{
+  background:var(--ink2);
+  padding:3rem clamp(1.25rem,4vw,5rem) 2rem;
+}
+.ft{max-width:1180px;margin:0 auto}
 .ft-top{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  flex-wrap:wrap;gap:2.5rem;
-  margin-bottom:2.5rem;padding-bottom:2.5rem;
-  border-bottom:1px solid rgba(255,255,255,.08);
+  display:grid;grid-template-columns:1fr auto auto;
+  gap:3rem;align-items:start;
+  padding-bottom:2rem;margin-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,.07);
 }
 .ft-brand-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.35rem;font-weight:600;
-  color:#fff;margin-bottom:.3rem;
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.3rem;
 }
-.ft-brand-name em{font-style:italic;color:rgba(255,255,255,.45)}
-.ft-tagline{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:400}
-.ft-nav{display:flex;flex-direction:column;gap:.7rem}
-.ft-nav a{
-  font-size:.72rem;font-weight:400;
-  color:rgba(255,255,255,.4);text-decoration:none;transition:color .18s;
+.ft-brand-name em{font-style:italic;font-weight:400;color:rgba(255,255,255,.4)}
+.ft-tagline{font-size:.72rem;color:rgba(255,255,255,.3);font-weight:400;margin-bottom:1rem}
+.ft-email{
+  display:flex;align-items:center;gap:.45rem;
+  font-size:.75rem;color:rgba(255,255,255,.45);text-decoration:none;
+  transition:color .18s;
 }
-.ft-nav a:hover{color:#fff}
-.ft-contact-col{display:flex;flex-direction:column;gap:.7rem}
-.ft-contact-item{
-  display:flex;align-items:center;gap:.6rem;
-  font-size:.75rem;color:rgba(255,255,255,.45);
+.ft-email:hover{color:#93c5fd}
+.ft-email svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ft-nav-col h4{font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.9rem}
+.ft-nav-col a{
+  display:block;font-size:.75rem;font-weight:400;
+  color:rgba(255,255,255,.4);text-decoration:none;
+  padding:.3rem 0;transition:color .18s;
 }
-.ft-contact-item a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .18s}
-.ft-contact-item a:hover{color:#fff}
-.ft-contact-item svg{width:13px;height:13px;stroke:rgba(255,255,255,.3);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.ft-li-row{
-  display:flex;align-items:center;gap:.55rem;
-  padding:.55rem .9rem;
-  background:rgba(10,102,194,.2);
-  border:1px solid rgba(10,102,194,.3);
-  border-radius:7px;
-  text-decoration:none;
-  font-size:.72rem;font-weight:500;
-  color:#93c5fd;
+.ft-nav-col a:hover{color:#fff}
+.ft-connect h4{font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.9rem}
+.ft-li-link{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.45rem .9rem;
+  background:rgba(10,102,194,.15);border:1px solid rgba(10,102,194,.25);
+  border-radius:7px;text-decoration:none;
+  font-size:.72rem;font-weight:500;color:#93c5fd;
+  transition:all .18s;margin-bottom:.5rem;
+}
+.ft-li-link:hover{background:rgba(10,102,194,.3);color:#fff}
+.ft-li-link svg{width:13px;height:13px;fill:currentColor}
+.ft-dl-link{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.45rem .9rem;
+  background:rgba(180,83,9,.12);border:1px solid rgba(180,83,9,.2);
+  border-radius:7px;text-decoration:none;
+  font-size:.72rem;font-weight:500;color:rgba(251,191,36,.7);
   transition:all .18s;
-  align-self:flex-start;
 }
-.ft-li-row:hover{background:rgba(10,102,194,.35);color:#fff;border-color:rgba(10,102,194,.5)}
-.ft-li-row svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
+.ft-dl-link:hover{background:rgba(180,83,9,.25);color:#fbbf24}
+.ft-dl-link svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .ft-bottom{
   display:flex;justify-content:space-between;align-items:center;
   flex-wrap:wrap;gap:.75rem;
 }
-.ft-copy{font-size:.68rem;color:rgba(255,255,255,.25)}
+.ft-copy{font-size:.65rem;color:rgba(255,255,255,.2)}
 
-/* ─────────────────────────────
+/* ══════════════════════════
    ANIMATIONS
-───────────────────────────── */
-@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.hero-eyebrow{animation:up .5s .05s both}
-h1            {animation:up .5s .12s both}
-.hero-role    {animation:up .5s .19s both}
-.hero-bio     {animation:up .5s .26s both}
-.btn-row      {animation:up .5s .33s both}
-.hero-right   {animation:up .5s .1s both}
+══════════════════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.h-kicker  {animation:fadeUp .5s .05s both}
+h1         {animation:fadeUp .5s .12s both}
+.h-role    {animation:fadeUp .5s .19s both}
+.h-bio     {animation:fadeUp .5s .26s both}
+.h-btns    {animation:fadeUp .5s .33s both}
+.hero-r    {animation:fadeUp .5s .1s both}
 
-/* ─────────────────────────────
+/* ══════════════════════════
+   SCROLL REVEAL
+══════════════════════════ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ══════════════════════════
    RESPONSIVE
-───────────────────────────── */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left{padding:calc(64px + 3rem) clamp(1.5rem,5vw,5rem) 3rem;border-right:none;border-bottom:1px solid var(--line)}
-  h1{font-size:clamp(2.8rem,8vw,4.5rem);white-space:normal}
-  .hero-left::before,.hero-left::after{display:none}
-  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;padding:2rem clamp(1.5rem,5vw,5rem)}
-  .sidebar-label{grid-column:1/-1}
-  .stats{grid-column:1/-1}
-  .li-card{grid-column:1/-1}
-  .n-li{display:none}
-  .about-grid{grid-template-columns:1fr}
-  .edu-grid{grid-template-columns:1fr}
-  .edu-card.featured{grid-column:auto}
-  .exp-header{grid-template-columns:1fr}
-  .exp-logo-wrap{border-right:none;border-bottom:1px solid var(--line);padding:1.3rem 2rem}
-  .sk-grid{grid-template-columns:1fr 1fr}
+══════════════════════════ */
+@media(max-width:1040px){
+  .hero{grid-template-columns:1fr}
+  .hero-l{padding:calc(66px + 2.5rem) clamp(1.25rem,5vw,5rem) 3rem;border-right:none;border-bottom:1px solid var(--line2)}
+  h1{white-space:normal;font-size:clamp(2.8rem,8vw,4.5rem)}
+  .hero-l::before,.hero-l::after{display:none}
+  .hero-r{padding:2rem clamp(1.25rem,5vw,5rem);display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+  .sb-label{grid-column:1/-1}
+  .stats-row{grid-column:1/-1}
+  .li-cta{grid-column:1/-1}
+  .resume-cta{grid-column:1/-1}
+  .about-wrap{grid-template-columns:1fr}
+  .edu-wrap{grid-template-columns:1fr}
+  .edu-card.span2{grid-column:auto}
+  .exp-top{grid-template-columns:1fr}
+  .exp-badge-col{border-right:none;border-bottom:1px solid var(--line);padding:1.5rem 2rem;flex-direction:row;gap:1rem}
+  .exp-highlights{grid-template-columns:1fr 1fr}
+  .sk-wrap{grid-template-columns:1fr 1fr}
+  .ft-top{grid-template-columns:1fr}
+  .n-li-btn{display:none}
 }
-@media(max-width:620px){
-  .n-links,.n-cta,.n-li{display:none}
+@media(max-width:640px){
+  .n-links,.n-actions{display:none}
   .ham{display:flex}
-  h1{font-size:clamp(2.2rem,9vw,3rem);white-space:nowrap}
-  .hero-right{grid-template-columns:1fr}
-  .sk-grid{grid-template-columns:1fr}
-  .ft-top{flex-direction:column;gap:1.8rem}
-  .ft-bottom{flex-direction:column;text-align:center}
+  h1{font-size:clamp(2.4rem,10vw,3.2rem);white-space:nowrap}
+  .hero-r{grid-template-columns:1fr}
+  .exp-highlights{grid-template-columns:1fr}
+  .sk-wrap{grid-template-columns:1fr}
+  .rb-inner{flex-direction:column;align-items:flex-start}
+  .rb-actions{width:100%}
+  .ft-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}
 }
 </style>
 </head>
@@ -623,12 +781,11 @@ h1            {animation:up .5s .12s both}
 <!-- NAV -->
 <nav>
   <a href="#" class="n-brand">
-    <div class="n-monogram">
-      <svg viewBox="0 0 20 20">
-        <path d="M10 2L2 6v8l8 4 8-4V6L10 2z"/>
-      </svg>
+    <div class="n-avatar"><span>S</span></div>
+    <div class="n-text">
+      <span class="n-name">Saif Ul Fayaz</span>
+      <span class="n-title">Electrical Engineer</span>
     </div>
-    <div class="n-name">Saif Ul <em>Fayaz</em></div>
   </a>
   <ul class="n-links">
     <li><a href="#about">About</a></li>
@@ -636,75 +793,97 @@ h1            {animation:up .5s .12s both}
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
   </ul>
-  <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="n-li">
-    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-    LinkedIn
-  </a>
-  <a href="mailto:contact@saiful.in" class="n-cta">Contact</a>
+  <div class="n-actions">
+    <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="n-li-btn">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="#resume" class="n-resume">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Resume
+    </a>
+  </div>
   <div class="ham" id="hm" onclick="this.classList.toggle('o');document.getElementById('mb').classList.toggle('o')">
     <span></span><span></span><span></span>
   </div>
 </nav>
-<div class="mob" id="mb">
+<nav class="mob" id="mb">
   <a href="#about"      onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">About</a>
   <a href="#education"  onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Education</a>
   <a href="#experience" onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Experience</a>
   <a href="#skills"     onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Skills</a>
+  <a href="#resume"     onclick="document.getElementById('mb').classList.remove('o');document.getElementById('hm').classList.remove('o')">Download Resume</a>
   <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener">LinkedIn Profile →</a>
   <a href="mailto:contact@saiful.in">contact@saiful.in</a>
-</div>
+</nav>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">
-      <span class="eye-dot"></span>
-      B.Tech · Electrical Engineering · 2026
+  <div class="hero-l">
+    <div class="h-kicker">
+      <span class="h-dot"></span>
+      B.Tech · Electrical Engineering · Class of 2026
     </div>
     <h1>Saif Ul<br><em>Fayaz</em></h1>
-    <div class="hero-role">
-      <strong>Final Year Student</strong>
-      <span class="rdot"></span>
+    <div class="h-role">
+      <b>Final Year Student</b>
+      <span class="sep">/</span>
       University of Kashmir
-      <span class="rdot"></span>
+      <span class="sep">/</span>
       Bandipora, J&amp;K
     </div>
-    <p class="hero-bio">An electrical engineering student with hands-on internship experience at the Kishanganga Hydroelectric Power Station under NHPC Limited. Four years of rigorous academic training, graduating 2026.</p>
-    <div class="btn-row">
+    <p class="h-bio">Electrical engineering student with industry experience at the Kishanganga Hydroelectric Power Station under NHPC Limited. Four years of rigorous academics, graduating 2026.</p>
+    <div class="h-btns">
       <a href="#experience" class="btn btn-primary">View Experience</a>
-      <a href="mailto:contact@saiful.in" class="btn btn-ghost">Get in Touch</a>
-      <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="btn btn-linkedin">
+      <a href="#resume" class="btn btn-resume">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
+      <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="btn btn-li">
         <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="sidebar-label">Quick Profile</div>
-    <div class="sc">
-      <div class="sc-bar"></div>
-      <div class="sc-label">Current Program</div>
+
+  <div class="hero-r">
+    <div class="sb-label">Quick Profile</div>
+    <div class="scard blue">
+      <div class="sc-lbl">Current Program</div>
       <div class="sc-val">B.Tech — Electrical Engineering</div>
       <div class="sc-sub">University of Kashmir · 8th Semester</div>
     </div>
-    <div class="sc">
-      <div class="sc-bar" style="background:var(--teal)"></div>
-      <div class="sc-label">Industry Internship</div>
+    <div class="scard teal">
+      <div class="sc-lbl">Industry Internship</div>
       <div class="sc-val">NHPC Limited</div>
       <div class="sc-sub">Kishanganga Power Station, Bandipora</div>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-n">8th</div><div class="stat-l">Semester</div></div>
-      <div class="stat"><div class="stat-n">2026</div><div class="stat-l">Graduating</div></div>
-      <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Qualifications</div></div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-n">8<span style="font-size:.9rem">th</span></div><div class="stat-l">Semester</div></div>
+      <div class="stat-box"><div class="stat-n">2026</div><div class="stat-l">Graduating</div></div>
+      <div class="stat-box"><div class="stat-n">5+</div><div class="stat-l">Credentials</div></div>
     </div>
-    <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="li-card">
-      <div class="li-icon">
+    <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="li-cta">
+      <div class="li-logo">
         <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
       </div>
       <div>
-        <div class="li-text-label">Connect on</div>
-        <div class="li-text-val">linkedin.com/in/saifulfayaz</div>
+        <div class="li-info-lbl">Connect on LinkedIn</div>
+        <div class="li-info-val">linkedin.com/in/saifulfayaz</div>
+      </div>
+    </a>
+    <a href="#resume" class="resume-cta">
+      <div class="rc-left">
+        <div class="rc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div>
+          <div class="rc-lbl">Download Resume</div>
+          <div class="rc-val">Saif_Ul_Fayaz_CV.pdf</div>
+        </div>
+      </div>
+      <div class="rc-arrow">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       </div>
     </a>
   </div>
@@ -712,54 +891,44 @@ h1            {animation:up .5s .12s both}
 
 <div class="divider"></div>
 
-<!-- ABOUT -->
-<section class="section stripe" id="about">
+<!-- ══ ABOUT ══ -->
+<section class="sec bg-cream" id="about">
   <div class="si">
-    <div class="s-num">01</div>
-    <div class="s-eyebrow">Profile</div>
-    <h2 class="s-h">About <em>Me</em></h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I am a final-year Electrical Engineering student at the University of Kashmir, on track to graduate in 2026. My academic journey has been driven by a genuine passion for electrical systems, energy infrastructure, and the principles that power modern society.</p>
-        <p>Beyond my core engineering programme, I hold an NCVT-certified COPA diploma from ITI Bandipora — providing practical grounding in computing and IT that meaningfully complements my technical background.</p>
-        <p>An internship at the Kishanganga Hydroelectric Power Station under NHPC Limited was one of the most formative experiences of my education. Working inside a live utility environment gave me firsthand exposure to large-scale power generation, high-voltage substations, and grid-level operations — translating coursework into practical mastery of complex energy infrastructure. I come from Bandipora, a district with remarkable renewable energy potential, and I am committed to contributing to its future.</p>
+    <div class="sec-ghost">01</div>
+    <div class="s-tag">Profile</div>
+    <h2 class="sec-h">About <em>Me</em></h2>
+    <div class="about-wrap reveal">
+      <div class="about-body">
+        <p>I am a <strong>final-year Electrical Engineering student</strong> at the University of Kashmir, on track to graduate in 2026. My academic journey has been driven by a genuine passion for electrical systems, power infrastructure, and the principles that power modern society.</p>
+        <p>Beyond my core engineering programme, I hold an <strong>NCVT-certified COPA diploma</strong> from ITI Bandipora — providing practical grounding in computing and IT that meaningfully complements my technical background.</p>
+        <p>An internship at the <strong>Kishanganga Hydroelectric Power Station</strong> under NHPC Limited was one of the most formative experiences of my education. Working inside a live utility environment gave me firsthand exposure to large-scale power generation, high-voltage substations, and grid-level operations — translating coursework into practical mastery of complex energy infrastructure.</p>
+        <p>I come from Bandipora, a district with remarkable renewable energy potential, and I am deeply committed to contributing to its energy future.</p>
       </div>
-      <div class="contact-card">
-        <div class="cc-head">Contact Details</div>
-        <div class="cc-row">
-          <div class="cc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
-          <div>
-            <div class="cc-lbl">Email</div>
-            <div class="cc-val"><a href="mailto:contact@saiful.in">contact@saiful.in</a></div>
-          </div>
+      <div class="ccard">
+        <div class="ccard-head">Contact Details</div>
+        <div class="crow">
+          <div class="crow-ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+          <div><div class="crow-lbl">Email</div><div class="crow-val"><a href="mailto:contact@saiful.in">contact@saiful.in</a></div></div>
         </div>
-        <div class="cc-row">
-          <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.1 2.82 2 2 0 012.08 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div>
-            <div class="cc-lbl">Phone</div>
-            <div class="cc-val">+91 78899 51631</div>
-          </div>
+        <div class="crow">
+          <div class="crow-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.1 2.82 2 2 0 012.08 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="crow-lbl">Phone</div><div class="crow-val">+91 78899 51631</div></div>
         </div>
-        <div class="cc-row">
-          <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-          <div>
-            <div class="cc-lbl">Location</div>
-            <div class="cc-val">Bandipora, J&amp;K — 193502</div>
-          </div>
+        <div class="crow">
+          <div class="crow-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div><div class="crow-lbl">Location</div><div class="crow-val">Bandipora, J&amp;K — 193502</div></div>
         </div>
-        <div class="cc-row">
-          <div class="cc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div>
-            <div class="cc-lbl">University</div>
-            <div class="cc-val">University of Kashmir</div>
-          </div>
+        <div class="crow">
+          <div class="crow-ico"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div><div class="crow-lbl">University</div><div class="crow-val">University of Kashmir</div></div>
         </div>
-        <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="cc-row">
-          <div class="cc-icon li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
-          <div>
-            <div class="cc-lbl">LinkedIn</div>
-            <div class="cc-val"><span style="color:var(--accent)">linkedin.com/in/saifulfayaz</span></div>
-          </div>
+        <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="crow">
+          <div class="crow-ico li-ico"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div><div class="crow-lbl">LinkedIn</div><div class="crow-val"><a class="li-a" href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener">linkedin.com/in/saifulfayaz</a></div></div>
+        </a>
+        <a href="#resume" class="crow">
+          <div class="crow-ico dl-ico"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <div><div class="crow-lbl">Resume</div><div class="crow-val" style="color:var(--gold)">Download CV / PDF</div></div>
         </a>
       </div>
     </div>
@@ -768,38 +937,42 @@ h1            {animation:up .5s .12s both}
 
 <div class="divider"></div>
 
-<!-- EDUCATION -->
-<section class="section white" id="education">
+<!-- ══ EDUCATION ══ -->
+<section class="sec bg-white" id="education">
   <div class="si">
-    <div class="s-num">02</div>
-    <div class="s-eyebrow">Academic Background</div>
-    <h2 class="s-h"><em>Education</em></h2>
-    <div class="edu-grid">
-      <div class="edu-card featured">
-        <div class="edu-period">2022 — 2026 · Expected
-          <span class="edu-badge ongoing">Ongoing</span>
+    <div class="sec-ghost">02</div>
+    <div class="s-tag">Academic Background</div>
+    <h2 class="sec-h"><em>Education</em></h2>
+    <div class="edu-wrap reveal">
+      <div class="edu-card span2">
+        <div class="edu-badge-row">
+          <span class="edu-period">2022 — 2026</span>
+          <span class="edu-tag ongoing">Ongoing</span>
         </div>
         <div class="edu-title">B.Tech — Electrical Engineering</div>
         <div class="edu-school">University of Kashmir</div>
-        <div class="edu-desc">Currently in the 8th and final semester. Coursework covers power systems, electrical machines, circuit theory, control systems, electronics, instrumentation, and electives including restructuring of power systems.</div>
+        <div class="edu-desc">Currently in the 8th and final semester. Coursework covers power systems, electrical machines, circuit theory, control systems, electronics, instrumentation, and electives including restructuring of power systems and energy management.</div>
       </div>
       <div class="edu-card">
-        <div class="edu-period">Diploma <span class="edu-badge">NCVT</span></div>
+        <div class="edu-badge-row">
+          <span class="edu-period">Diploma</span>
+          <span class="edu-tag cert">NCVT Certified</span>
+        </div>
         <div class="edu-title">COPA — Computer Operator &amp; Programming Assistant</div>
         <div class="edu-school">ITI Bandipora · National Council for Vocational Training</div>
-        <div class="edu-desc">IT fundamentals, MS Office Suite, basic programming and computer operations — nationally certified.</div>
+        <div class="edu-desc">IT fundamentals, MS Office Suite, basic programming and computer operations — nationally certified vocational qualification.</div>
       </div>
       <div class="edu-card">
-        <div class="edu-period">Higher Secondary</div>
+        <div class="edu-badge-row"><span class="edu-period">Higher Secondary</span></div>
         <div class="edu-title">12th Class</div>
         <div class="edu-school">NM Boys Higher Secondary School, Bandipora</div>
-        <div class="edu-desc">Completed higher secondary education, forming the academic foundation for engineering studies.</div>
+        <div class="edu-desc">Completed higher secondary with a strong science foundation, forming the academic basis for engineering studies.</div>
       </div>
       <div class="edu-card">
-        <div class="edu-period">Secondary</div>
+        <div class="edu-badge-row"><span class="edu-period">Secondary</span></div>
         <div class="edu-title">10th Class</div>
         <div class="edu-school">Faiz-e-Aam Secondary School, Bandipora</div>
-        <div class="edu-desc">Strong grounding in mathematics and sciences, building early academic discipline.</div>
+        <div class="edu-desc">Strong grounding in mathematics and sciences, building early academic discipline and analytical thinking.</div>
       </div>
     </div>
   </div>
@@ -807,29 +980,36 @@ h1            {animation:up .5s .12s both}
 
 <div class="divider"></div>
 
-<!-- EXPERIENCE -->
-<section class="section stripe" id="experience">
+<!-- ══ EXPERIENCE ══ -->
+<section class="sec bg-cream" id="experience">
   <div class="si">
-    <div class="s-num">03</div>
-    <div class="s-eyebrow">Industry Exposure</div>
-    <h2 class="s-h">Work <em>Experience</em></h2>
-    <div class="exp-card">
-      <div class="exp-header">
-        <div class="exp-logo-wrap">
-          <div class="nhpc-mark">
-            <div class="nm-top">NHPC</div>
-            <div class="nm-mid"></div>
-            <div class="nm-bot">LIMITED</div>
+    <div class="sec-ghost">03</div>
+    <div class="s-tag">Industry Exposure</div>
+    <h2 class="sec-h">Work <em>Experience</em></h2>
+    <div class="exp-wrap reveal">
+      <div class="exp-top">
+        <div class="exp-badge-col">
+          <div class="nhpc-badge">
+            <div class="nb-name">NHPC</div>
+            <div class="nb-rule"></div>
+            <div class="nb-sub">LIMITED</div>
           </div>
+          <span class="exp-type-tag">Internship</span>
         </div>
-        <div class="exp-meta">
-          <div class="exp-type">Engineering Internship</div>
-          <div class="exp-name">Kishanganga Power Station</div>
+        <div class="exp-info-col">
+          <div class="exp-org-label">Engineering Internship</div>
+          <div class="exp-title">Kishanganga Power Station</div>
           <div class="exp-org">NHPC Limited &nbsp;·&nbsp; Bandipora, Jammu &amp; Kashmir</div>
+          <div class="exp-dates">Internship · 2024–2025</div>
         </div>
       </div>
       <div class="exp-body">
-        <p>Completed an internship at the Kishanganga Hydroelectric Power Station — a major run-of-river project operated by NHPC Limited, one of India's largest hydropower corporations. Gained comprehensive exposure to utility-grade power generation, high-voltage substation infrastructure, and the systems coordinating power evacuation to the national grid. This experience translated four years of engineering coursework into a practical understanding of large-scale energy infrastructure.</p>
+        <p>Completed an internship at the Kishanganga Hydroelectric Power Station — a major run-of-river project operated by NHPC Limited, one of India's largest hydropower corporations. Gained comprehensive exposure to utility-grade power generation, high-voltage substation infrastructure, and the systems coordinating power evacuation to the national grid.</p>
+        <div class="exp-highlights">
+          <div class="exp-hl"><div class="hl-dot"></div><div class="hl-text">Hands-on exposure to utility-grade hydropower generation systems</div></div>
+          <div class="exp-hl"><div class="hl-dot" style="background:var(--teal)"></div><div class="hl-text">High-voltage substation operations and safety protocols</div></div>
+          <div class="exp-hl"><div class="hl-dot" style="background:var(--gold)"></div><div class="hl-text">Grid-level power evacuation and national grid integration</div></div>
+        </div>
         <div class="tags">
           <span class="tag">Hydropower</span>
           <span class="tag">NHPC Limited</span>
@@ -839,6 +1019,7 @@ h1            {animation:up .5s .12s both}
           <span class="tag">Grid Operations</span>
           <span class="tag">Electrical Engineering</span>
           <span class="tag">Utility Infrastructure</span>
+          <span class="tag">Renewable Energy</span>
         </div>
       </div>
     </div>
@@ -847,17 +1028,17 @@ h1            {animation:up .5s .12s both}
 
 <div class="divider"></div>
 
-<!-- SKILLS -->
-<section class="section white" id="skills">
+<!-- ══ SKILLS ══ -->
+<section class="sec bg-white" id="skills">
   <div class="si">
-    <div class="s-num">04</div>
-    <div class="s-eyebrow">Capabilities</div>
-    <h2 class="s-h">Skills &amp; <em>Expertise</em></h2>
-    <div class="sk-grid">
+    <div class="sec-ghost">04</div>
+    <div class="s-tag">Capabilities</div>
+    <h2 class="sec-h">Skills &amp; <em>Expertise</em></h2>
+    <div class="sk-wrap reveal">
       <div class="sk-card">
-        <div class="sk-head">
-          <div class="sk-icon"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div class="sk-name">Power Systems</div>
+        <div class="sk-hd">
+          <div class="sk-ico"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="sk-nm">Power Systems</div>
         </div>
         <div class="chips">
           <span class="chip">Power Generation</span><span class="chip">Power Distribution</span>
@@ -866,9 +1047,9 @@ h1            {animation:up .5s .12s both}
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-head">
-          <div class="sk-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
-          <div class="sk-name">Electrical Engineering</div>
+        <div class="sk-hd">
+          <div class="sk-ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+          <div class="sk-nm">Electrical Engineering</div>
         </div>
         <div class="chips">
           <span class="chip">Circuit Theory</span><span class="chip">Electrical Machines</span>
@@ -877,9 +1058,9 @@ h1            {animation:up .5s .12s both}
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-head">
-          <div class="sk-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div class="sk-name">Computing &amp; IT</div>
+        <div class="sk-hd">
+          <div class="sk-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="sk-nm">Computing &amp; IT</div>
         </div>
         <div class="chips">
           <span class="chip">MS Office Suite</span><span class="chip">Computer Operations</span>
@@ -888,9 +1069,9 @@ h1            {animation:up .5s .12s both}
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-head">
-          <div class="sk-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <div class="sk-name">Soft Skills</div>
+        <div class="sk-hd">
+          <div class="sk-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="sk-nm">Soft Skills</div>
         </div>
         <div class="chips">
           <span class="chip">Analytical Thinking</span><span class="chip">Problem Solving</span>
@@ -899,9 +1080,9 @@ h1            {animation:up .5s .12s both}
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-head">
-          <div class="sk-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-          <div class="sk-name">Languages</div>
+        <div class="sk-hd">
+          <div class="sk-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <div class="sk-nm">Languages</div>
         </div>
         <div class="chips">
           <span class="chip">English</span><span class="chip">Urdu</span>
@@ -909,9 +1090,9 @@ h1            {animation:up .5s .12s both}
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-head">
-          <div class="sk-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="sk-name">Industry Knowledge</div>
+        <div class="sk-hd">
+          <div class="sk-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="sk-nm">Industry Knowledge</div>
         </div>
         <div class="chips">
           <span class="chip">Utility Operations</span><span class="chip">Renewable Energy</span>
@@ -923,41 +1104,75 @@ h1            {animation:up .5s .12s both}
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ RESUME DOWNLOAD BANNER ══ -->
+<section class="resume-banner" id="resume">
+  <div class="rb-inner">
+    <div>
+      <div class="rb-text-label">Ready to hire?</div>
+      <div class="rb-headline">Download my <em>Resume</em></div>
+      <div class="rb-sub">Full CV with academics, experience &amp; certifications — PDF format</div>
+    </div>
+    <div class="rb-actions">
+      <a href="Saif_Ul_Fayaz_Resume.pdf" download="Saif_Ul_Fayaz_Resume.pdf" class="btn-dl">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume (PDF)
+      </a>
+      <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="btn-li-w">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn Profile
+      </a>
+      <a href="mailto:contact@saiful.in" class="btn-email-w">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        Send Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="ft-inner">
+  <div class="ft">
     <div class="ft-top">
       <div>
         <div class="ft-brand-name">Saif Ul <em>Fayaz</em></div>
-        <div class="ft-tagline">Electrical Engineer · Bandipora, Jammu &amp; Kashmir · 193502</div>
+        <div class="ft-tagline">Electrical Engineering Student · University of Kashmir · Graduating 2026</div>
+        <a href="mailto:contact@saiful.in" class="ft-email">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          contact@saiful.in
+        </a>
       </div>
-      <div class="ft-nav">
+      <div class="ft-nav-col">
+        <h4>Navigate</h4>
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
       </div>
-      <div class="ft-contact-col">
-        <div class="ft-contact-item">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-          <a href="mailto:contact@saiful.in">contact@saiful.in</a>
-        </div>
-        <div class="ft-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.1 2.82 2 2 0 012.08 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <a href="tel:+917889951631">+91 78899 51631</a>
-        </div>
-        <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="ft-li-row">
+      <div class="ft-connect">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" class="ft-li-link">
           <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          Connect on LinkedIn
+          LinkedIn Profile
+        </a>
+        <a href="Saif_Ul_Fayaz_Resume.pdf" download="Saif_Ul_Fayaz_Resume.pdf" class="ft-dl-link">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
         </a>
       </div>
     </div>
     <div class="ft-bottom">
-      <div class="ft-copy">© 2026 Saif Ul Fayaz. All rights reserved.</div>
-      <div class="ft-copy">Built with care · Graduating 2026</div>
+      <div class="ft-copy">© 2026 Saif Ul Fayaz — All rights reserved</div>
+      <div class="ft-copy">Bandipora, Jammu &amp; Kashmir · 193502 · +91 78899 51631</div>
     </div>
   </div>
 </footer>
 
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
